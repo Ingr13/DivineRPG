@@ -29,9 +29,9 @@ public class EntityFrostArcher extends EntityMob implements IRangedAttackMob
     public EntityFrostArcher(World var1)
     {
         super(var1);
-        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 2, 10));
+        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 2, 10));
         this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(5, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(5, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
@@ -48,12 +48,12 @@ public class EntityFrostArcher extends EntityMob implements IRangedAttackMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(30); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(120); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(30); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(120); // MaxHP
     }
 
     /**

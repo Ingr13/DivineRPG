@@ -34,17 +34,17 @@ public class EntityGorgosion extends EntityMob
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 16.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(64.0);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(64.0);
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.45); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(60); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.45); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(60); // MaxHP
     }
 
     @Override
@@ -74,10 +74,7 @@ public class EntityGorgosion extends EntityMob
         return 0;
     }
 
-    public int getMaxHealth()
-    {
-        return 30;
-    }
+
 
     /**
      * Returns the current armor value as determined by a call to InventoryPlayer.getTotalArmorValue

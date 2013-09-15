@@ -40,12 +40,12 @@ public class EntityKingOfScorchers extends EntityMob implements IBossDisplayData
     }
     
 	@Override
-    public void func_110147_ax()
+    public void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(30); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(6000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(30); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(6000); // MaxHP
     }
 	
 	@Override

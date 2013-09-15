@@ -27,9 +27,9 @@ public class EntityVermenous extends EntityMob
     {
         super(var1);
         double moveSpeed = 0.25F;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(19); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(100); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(19); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100); // MaxHP
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, moveSpeed, false));
         this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, moveSpeed));
@@ -37,7 +37,7 @@ public class EntityVermenous extends EntityMob
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(64.0);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(64.0);
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.ability = 0;
     }
@@ -87,10 +87,6 @@ public class EntityVermenous extends EntityMob
         return true;
     }
 
-    public int getMaxHealth()
-    {
-        return 55;
-    }
 
     /**
      * Returns the current armor value as determined by a call to InventoryPlayer.getTotalArmorValue

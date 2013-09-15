@@ -38,7 +38,7 @@ public class EntityParatiku extends EntityCreature
         this.setIsBatHanging(true);
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(4, new EntityAIParatikuFollowOwner(this, (float) this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 10.0F, 2.0F));
+        this.tasks.addTask(4, new EntityAIParatikuFollowOwner(this, (float) this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 10.0F, 2.0F));
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, 0.3D, true));
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
@@ -46,11 +46,11 @@ public class EntityParatiku extends EntityCreature
         this.targetTasks.addTask(2, new EntityAIParatikuOwnerHurtTarget(this));
     }
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(60); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.3); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(60); // MaxHP
     }
 
     @Override

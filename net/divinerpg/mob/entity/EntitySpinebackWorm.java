@@ -34,13 +34,13 @@ public class EntitySpinebackWorm extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.15); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(1); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(1); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0); // FollowRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.15); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(1); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0); // FollowRange
     }
 
     @Override

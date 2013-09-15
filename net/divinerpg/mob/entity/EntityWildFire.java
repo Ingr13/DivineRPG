@@ -28,8 +28,8 @@ public class EntityWildFire extends EntityMob implements IRangedAttackMob
     {
         super(par1World);
 
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(13); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(100); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(13); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100); // MaxHP
         this.tasks.addTask(7, new EntityAIArrowAttack(this, 0.25F, 15, 10.0F));        
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIRestrictSun(this));

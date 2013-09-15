@@ -71,7 +71,7 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
         this.isMating = false;
         this.isPlaying = false;
         this.villageObj = null;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.5); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5); // speed
         this.getNavigator().setBreakDoors(true);
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -111,12 +111,12 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
 
             if (this.villageObj == null)
             {
-                this.func_110177_bN();
+                this.detachHome();
             }
             else
             {
                 ChunkCoordinates var1 = this.villageObj.getCenter();
-                this.func_110171_b(var1.posX, var1.posY, var1.posZ, (int)(this.villageObj.getVillageRadius() * 0.6F));
+                this.setHomeArea(var1.posX, var1.posY, var1.posZ, (int)((float)this.villageObj.getVillageRadius() * 0.6F));
 
                 if (this.field_82190_bM)
                 {
@@ -206,11 +206,6 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
     protected void entityInit()
     {
         super.entityInit();
-    }
-
-    public int getMaxHealth()
-    {
-        return 1000;
     }
 
     /**

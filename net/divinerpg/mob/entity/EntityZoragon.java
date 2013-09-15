@@ -30,7 +30,7 @@ public class EntityZoragon extends EntityMob
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
         this.flyTimer = 0;
@@ -38,24 +38,20 @@ public class EntityZoragon extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.15); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(110); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0); // FollowRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.15); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(110); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0); // FollowRange
     }
 
     public int getAttackStrength(Entity var1)
     {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
+        return (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
     }
 
-    public int getMaxHealth()
-    {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e();
-    }
 
     /**
      * Checks if the entity's current position is a valid location to spawn this entity.

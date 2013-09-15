@@ -30,18 +30,18 @@ public class EntityEnt extends EntityMob
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(64.0); // Follow
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(64.0); // Follow
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.setSize(1.4F, 3.9F);
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(20); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(50); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(20); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(50); // MaxHP
     }
 
     /**

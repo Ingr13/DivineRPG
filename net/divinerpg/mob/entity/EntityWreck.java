@@ -82,13 +82,13 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(5000); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0); // FollowRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(5000); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0); // FollowRange
     }
 
     @Override
@@ -122,13 +122,13 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
 
         if (this.waitTick <= 0)
         {
-            this.manageAbilities();
+            //this.manageAbilities();
             super.updateAITasks();
         }
     }
 
 
-    public void manageAbilities()
+   /* public void manageAbilities()
     {
         if (!this.worldObj.isRemote)
         {
@@ -160,7 +160,7 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
                         case 0:
                             ability = PULL;
                             this.setAIMoveSpeed(0.0F);
-                            this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.0F); // Speed
+                            this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.0F); // Speed
                             break;
                         case 1:
                             ability = CHARGE;
@@ -244,7 +244,7 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
         }
 
     }
-
+*/
     private void message()
     {
         List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(64.0D, 64.0D, 64.0D));
@@ -427,8 +427,8 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
             if (ability == PULL)
             {
                 ability = DEFAULT;
-                this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25);
-                this.setAIMoveSpeed((float) this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e());
+                this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25);
+                this.setAIMoveSpeed((float) this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue());
                 var3 = 2;
             }
             if (var3 > 0)

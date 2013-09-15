@@ -28,9 +28,9 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
     {
         super(par1World);
         double moveSpeed = 0.25F;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(65); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(65); // MaxHP
         this.tasks.addTask(7, new EntityAIArrowAttack(this, moveSpeed, 60, 64.0F));        
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIRestrictSun(this));
@@ -39,7 +39,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        //TODO: Set SharedMonsterAttributes.field_111265_b to 64.0f to fix the new EntityAINearestAttackableTarget's range.
+        //TODO: Set SharedMonsterAttributes.followRange to 64.0f to fix the new EntityAINearestAttackableTarget's range.
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
     }
 

@@ -49,8 +49,8 @@ public class EntityStoneGolem extends EntityTameable
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
         this.tasks.addTask(4, new EntityAIAttackOnCollide(this, speed, true));
-        this.tasks.addTask(5, new EntityAIFollowOwner(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 10.0F, 2.0F));
-        this.tasks.addTask(6, new EntityAIMate(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(5, new EntityAIFollowOwner(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 10.0F, 2.0F));
+        this.tasks.addTask(6, new EntityAIMate(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(7, new EntityAIWander(this, speed));
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
@@ -59,11 +59,11 @@ public class EntityStoneGolem extends EntityTameable
         this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
     }
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(200); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.3); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(200); // MaxHP
     }
    
     @Override
@@ -402,7 +402,7 @@ public class EntityStoneGolem extends EntityTameable
                     this.setPathToEntity((PathEntity)null);
                     this.setAttackTarget((EntityLiving)null);
                     this.aiSit.setSitting(true);
-                    this.setEntityHealth(200);
+                    this.setHealth(200);
                     this.setOwner(var1.username);
                     this.playTameEffect(true);
                     this.worldObj.setEntityState(this, (byte)7);

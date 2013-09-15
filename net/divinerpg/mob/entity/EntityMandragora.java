@@ -28,9 +28,9 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
     {
         super(var1);
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 30, 64.0F));
-        this.tasks.addTask(5, new EntityAIMoveTowardsTarget(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 128.0F));
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 30, 64.0F));
+        this.tasks.addTask(5, new EntityAIMoveTowardsTarget(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 128.0F));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
@@ -38,13 +38,13 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(8); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(35); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0f); // followRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(8); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(35); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0f); // followRange
     }
 
     /**

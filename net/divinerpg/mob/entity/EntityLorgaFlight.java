@@ -30,24 +30,24 @@ public class EntityLorgaFlight extends EntityMob
         super(var1);
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), true));
+        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), true));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.canSpawnMinions = canSpawnMinions;
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
         this.flyTimer = 0;
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.15); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(7); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(40); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(32.0f); // followRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.15); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(7); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(40); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(32.0f); // followRange
     }
 
 

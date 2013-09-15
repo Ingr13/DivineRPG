@@ -51,12 +51,12 @@ public class EntityHerbomancer extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(5); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(40); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(5); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(40); // MaxHP
     }
     /**
      * Returns the current armor value as determined by a call to InventoryPlayer.getTotalArmorValue

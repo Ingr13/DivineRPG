@@ -42,9 +42,9 @@ public class EntityKaros extends EntityMob implements IBossDisplayData
         super(par1);
 
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), false));
-        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), false));
+        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
@@ -55,12 +55,12 @@ public class EntityKaros extends EntityMob implements IBossDisplayData
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(20); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(4000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(20); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(4000); // MaxHP
     }
 
     public EntityKaros(World par1, int par2, int par3, int par4)
@@ -164,11 +164,6 @@ public class EntityKaros extends EntityMob implements IBossDisplayData
     public void manageAbilities()
     {
 
-        if (!this.worldObj.isRemote)
-        {
-            this.dataWatcher.updateObject(16, func_110138_aP());
-        }
-
         if (ability == DEFAULT && this.abilityCoolDown == 0 )
         {
             this.abilityCoolDown = 200;
@@ -177,7 +172,7 @@ public class EntityKaros extends EntityMob implements IBossDisplayData
                 case 0:
                     ability = CEILING;
                     this.rangedAttackCounter = 200;
-                    this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0);
+                    this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0);
                     this.playSound(Sound.CeilingExplosions, 1.0F, 1.0F);
                     break;
                 case 1:

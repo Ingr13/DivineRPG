@@ -25,12 +25,12 @@ public class EntityCyclops extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(1D); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(16); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(400); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(1D); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(16); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(400); // MaxHP
     }
 
     /**
@@ -58,7 +58,7 @@ public class EntityCyclops extends EntityMob
     @Override
     public void onUpdate()
     {
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(this.entityToAttack != null ? 0.95F : 0.5F);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(this.entityToAttack != null ? 0.95F : 0.5F);
 
         if (this.randomSoundDelay > 0 && --this.randomSoundDelay == 0)
         {

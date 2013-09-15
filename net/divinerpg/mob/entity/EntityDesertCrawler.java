@@ -24,11 +24,11 @@ public class EntityDesertCrawler extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(15); // DMG
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(60); // MaxHealth
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(15); // DMG
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(60); // MaxHealth
     }
 
     @Override

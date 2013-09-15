@@ -147,10 +147,6 @@ public class EntityLeorna extends EntityVillager implements INpc, IMerchant
         super.entityInit();
     }
 
-    public int getMaxHealth()
-    {
-        return 1000;
-    }
 
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.

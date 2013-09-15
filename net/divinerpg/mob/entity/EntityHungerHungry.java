@@ -120,13 +120,12 @@ public class EntityHungerHungry extends EntityVillager implements INpc, IMerchan
 
             if (this.villageObj == null)
             {
-                this.func_110177_bN();
+                this.detachHome();
             }
             else
             {
                 ChunkCoordinates var1 = this.villageObj.getCenter();
-                this.func_110171_b(var1.posX, var1.posY, var1.posZ, (int)(this.villageObj.getVillageRadius() * 0.6F));
-
+                this.setHomeArea(var1.posX, var1.posY, var1.posZ, (int)((float)this.villageObj.getVillageRadius() * 0.6F));
                 if (this.field_82190_bM)
                 {
                     this.field_82190_bM = false;
@@ -215,11 +214,11 @@ public class EntityHungerHungry extends EntityVillager implements INpc, IMerchan
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.15F); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(1000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.15F); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1000); // MaxHP
     }
 
     /**

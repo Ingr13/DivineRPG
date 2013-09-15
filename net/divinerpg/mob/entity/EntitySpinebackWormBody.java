@@ -27,7 +27,7 @@ public class EntitySpinebackWormBody extends EntityMob
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.noClip = true;
     }
 
@@ -49,23 +49,18 @@ public class EntitySpinebackWormBody extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.15); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(1); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(1); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.15); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(1); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1); // MaxHP
     }
 
 
     public int getAttackStrength(Entity var1)
     {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
-    }
-
-    public int getMaxHealth()
-    {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e();
+        return (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
     }
 
     /**

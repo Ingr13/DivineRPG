@@ -38,12 +38,12 @@ public class EntityHoverStinger extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.15F); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(4); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(20); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.15F); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20); // MaxHP
     }
 
     @Override

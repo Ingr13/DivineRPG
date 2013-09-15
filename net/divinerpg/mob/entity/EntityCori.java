@@ -38,12 +38,12 @@ public class EntityCori extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(80); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(10); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(80); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10); // MaxHP
     }
 
     @Override
@@ -229,7 +229,7 @@ public class EntityCori extends EntityMob
             this.motionZ *= var3;
         }
 
-        this.prevLimbYaw = this.limbYaw;
+        this.prevRotationYaw = this.rotationYaw;
         double var10 = this.posX - this.prevPosX;
         double var9 = this.posZ - this.prevPosZ;
         float var7 = MathHelper.sqrt_double(var10 * var10 + var9 * var9) * 4.0F;
@@ -239,8 +239,8 @@ public class EntityCori extends EntityMob
             var7 = 1.0F;
         }
 
-        this.limbYaw += (var7 - this.limbYaw) * 0.4F;
-        this.limbSwing += this.limbYaw;
+        this.rotationYaw += (var7 - this.rotationYaw) * 0.4F;
+        this.limbSwing += this.rotationYaw;
     }
 
     /**

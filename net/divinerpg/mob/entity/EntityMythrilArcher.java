@@ -15,9 +15,9 @@ public class EntityMythrilArcher extends EntityEnergyArcher
     public EntityMythrilArcher(World var1)
     {
         super(var1);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(30); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(430); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(30); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(430); // MaxHP
         this.setSize(2.0F, 5.0F);
     }
 

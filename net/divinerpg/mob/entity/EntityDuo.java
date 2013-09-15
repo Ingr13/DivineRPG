@@ -44,12 +44,12 @@ public abstract class EntityDuo extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.2); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(7); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(20); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.2); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(7); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20); // MaxHP
     }
 
     @Override

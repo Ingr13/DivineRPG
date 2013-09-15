@@ -34,17 +34,17 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
     {
         super(par1World);
         double moveSpeed = 0.25F;    
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(120); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(120); // MaxHP
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(7, new EntityAIArrowAttack(this, 0.25F, 40, 5.0F)); 
-        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
-        this.tasks.addTask(5, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
+        this.tasks.addTask(5, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));  
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0);
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.setSize(0.8F, 1.0F);
     }
@@ -138,7 +138,7 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
     @Override
     public boolean attackEntityAsMob(Entity par1Entity)
     {
-        int var2 = (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
+        int var2 = (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
 
         if (this.isPotionActive(Potion.damageBoost))
         {

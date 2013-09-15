@@ -20,12 +20,12 @@ public class EntityHellBat extends EntityMob
     public EntityHellBat(World par1World)
     {
         super(par1World);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(20); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(20); // Attack
 
         this.setSize(0.5F, 0.9F);
         this.setIsBatHanging(true);
-        this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), false));
-        this.tasks.addTask(1, new EntityAIMoveTowardsRestriction(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), false));
+        this.tasks.addTask(1, new EntityAIMoveTowardsRestriction(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
     }
@@ -102,10 +102,6 @@ public class EntityHellBat extends EntityMob
 
     protected void func_85033_bc() {}
 
-    public int getMaxHealth()
-    {
-        return 120;
-    }
 
     public boolean getIsBatHanging()
     {

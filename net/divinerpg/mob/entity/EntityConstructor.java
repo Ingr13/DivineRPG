@@ -21,12 +21,12 @@ public class EntityConstructor extends EntityZombie
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.2); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(25); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(100); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.2); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(25); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100); // MaxHP
     }
 
     @Override

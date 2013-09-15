@@ -27,12 +27,12 @@ public class EntitySoulFiend extends EntityZombie implements IBossDisplayData
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.5); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(50); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(5800); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(50); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(5800); // MaxHP
     }
     
     @Override
@@ -89,11 +89,6 @@ public class EntitySoulFiend extends EntityZombie implements IBossDisplayData
             {
                 this.setFire(8);
             }
-        }
-
-        if (!this.worldObj.isRemote)
-        {
-            this.dataWatcher.updateObject(16, this.func_110138_aP());
         }
 
         super.onLivingUpdate();

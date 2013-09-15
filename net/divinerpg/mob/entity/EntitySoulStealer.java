@@ -17,9 +17,9 @@ public class EntitySoulStealer extends EntityZombie
     public EntitySoulStealer(World var1)
     {
         super(var1);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.23); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(30); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(900); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.23); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(30); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(900); // MaxHP
     }
 
     /**

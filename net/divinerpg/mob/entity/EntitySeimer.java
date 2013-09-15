@@ -26,18 +26,18 @@ public class EntitySeimer extends EntityTameable
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
-        this.tasks.addTask(4, new EntityAIFollowOwner(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 4.0F, 2.0F));
+        this.tasks.addTask(4, new EntityAIFollowOwner(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 4.0F, 2.0F));
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.regenTimer = 0;
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.56D); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(150); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.56D); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(150); // MaxHP
     }
 
     @Override

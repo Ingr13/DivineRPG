@@ -39,8 +39,8 @@ public class EntitySerenityBunny extends EntityTameable
     {
         super(var1);
         double moveSpeed = 0.3;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed);
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(10); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10); // MaxHP
 
         this.setSize(0.5F, 0.5F);
         this.experienceValue = 40;
@@ -190,7 +190,7 @@ public class EntitySerenityBunny extends EntityTameable
             return false;
         }
 
-        return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e());
+        return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), (float) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue());
     }
 
     private void becomeAngryAt(Entity var1)
@@ -282,7 +282,7 @@ public class EntitySerenityBunny extends EntityTameable
                     this.setPathToEntity((PathEntity)null);
                     this.setAttackTarget((EntityLiving)null);
                     this.aiSit.setSitting(true);
-                    this.setEntityHealth(20);
+                    this.setHealth(20);
                     this.setOwner(var1.username);
                     this.playTameEffect(true);
                     this.worldObj.setEntityState(this, (byte)7);

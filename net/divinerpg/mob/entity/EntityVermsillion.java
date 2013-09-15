@@ -48,10 +48,10 @@ public class EntityVermsillion extends EntityTameable
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
-        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), true));
-        this.tasks.addTask(5, new EntityAIFollowOwner(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 10.0F, 2.0F));
-        this.tasks.addTask(6, new EntityAIMate(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
-        this.tasks.addTask(7, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), true));
+        this.tasks.addTask(5, new EntityAIFollowOwner(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 10.0F, 2.0F));
+        this.tasks.addTask(6, new EntityAIMate(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
+        this.tasks.addTask(7, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
@@ -60,11 +60,11 @@ public class EntityVermsillion extends EntityTameable
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(30); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.3); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(30); // MaxHP
     }
 
     @Override
@@ -77,7 +77,7 @@ public class EntityVermsillion extends EntityTameable
         }
         else if (this.waitTick == 1)
         {
-            this.setAIMoveSpeed((float) this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e());
+            this.setAIMoveSpeed((float) this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue());
             --this.waitTick;
             System.out.println("Charge Defaulting");
         }
@@ -90,7 +90,7 @@ public class EntityVermsillion extends EntityTameable
         else if (this.waitTick > 0)
         {
             --this.waitTick;
-            this.moveEntityWithHeading(0F, (float) this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e());
+            this.moveEntityWithHeading(0F, (float) this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue());
         }
 
         super.updateAITasks();
@@ -117,15 +117,6 @@ public class EntityVermsillion extends EntityTameable
         {
             this.setAngry(true);
         }
-    }
-
-    /**
-     * main AI tick function, replaces updateEntityActionState
-     */
-    @Override
-    protected void updateAITick()
-    {
-        this.dataWatcher.updateObject(18, func_110138_aP());
     }
 
     @Override
@@ -370,7 +361,7 @@ public class EntityVermsillion extends EntityTameable
     @Override
     public boolean attackEntityAsMob(Entity var1)
     {
-        int var2 = (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
+        int var2 = (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
         var1.addVelocity(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F) * 3 * 0.5F, 0.1D, MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F) * 3 * 0.5F);
         this.motionX *= 0.6D;
         this.motionZ *= 0.6D;
@@ -391,7 +382,7 @@ public class EntityVermsillion extends EntityTameable
             {
                 ItemFood var3 = (ItemFood)Item.itemsList[var2.itemID];
 
-                if (var3.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectInt(18) < this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e())
+                if (var3.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectInt(18) < this.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue())
                 {
                     if (!var1.capabilities.isCreativeMode)
                     {
@@ -436,7 +427,7 @@ public class EntityVermsillion extends EntityTameable
                     this.setPathToEntity((PathEntity)null);
                     this.setAttackTarget((EntityLiving)null);
                     this.aiSit.setSitting(true);
-                    this.setEntityHealth((float) this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e());
+                    this.setHealth((float) this.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue());
                     this.setOwner(var1.username);
                     this.playTameEffect(true);
                     this.worldObj.setEntityState(this, (byte)7);

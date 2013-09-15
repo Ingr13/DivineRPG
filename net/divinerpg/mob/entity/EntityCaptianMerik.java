@@ -156,7 +156,7 @@ public class EntityCaptianMerik extends EntityVillager implements INpc, IMerchan
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // speed
-        //this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
+        //this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1000); // MaxHP
     }
 

@@ -26,9 +26,9 @@ public class EntityVerek extends EntityMob
     {
         super(var1);
         double moveSpeed = 0.4F;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(19); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(100); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(19); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(100); // MaxHP
         this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIBreakDoor(this));
@@ -47,11 +47,6 @@ public class EntityVerek extends EntityMob
     public int getAttackStrength(Entity var1)
     {
         return 35;
-    }
-
-    public int getMaxHealth()
-    {
-        return 400;
     }
 
     /**

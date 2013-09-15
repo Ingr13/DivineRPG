@@ -21,9 +21,9 @@ public class EntitySamek extends EntityMob
     public EntitySamek(World var1)
     {
         super(var1);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.2); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(35); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(300); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.2); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(35); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(300); // MaxHP
         this.setSize(2.0F, 2.0F);
         this.experienceValue = 40;
     }
@@ -52,7 +52,7 @@ public class EntitySamek extends EntityMob
     @Override
     public void onUpdate()
     {
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(this.entityToAttack != null ? 0.95F : 0.5F);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(this.entityToAttack != null ? 0.95F : 0.5F);
 
         if (this.randomSoundDelay > 0 && --this.randomSoundDelay == 0)
         {

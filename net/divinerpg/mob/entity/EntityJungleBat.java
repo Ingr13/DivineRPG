@@ -23,10 +23,10 @@ public class EntityJungleBat extends EntityMob
         this.setSize(0.5F, 0.9F);
         this.setIsBatHanging(true);
 
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(20); // DMG
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.6F);
-        this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), false));
-        this.tasks.addTask(1, new EntityAIMoveTowardsRestriction(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(20); // DMG
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.6F);
+        this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), false));
+        this.tasks.addTask(1, new EntityAIMoveTowardsRestriction(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
@@ -106,10 +106,6 @@ public class EntityJungleBat extends EntityMob
 
     protected void func_85033_bc() {}
 
-    public int getMaxHealth()
-    {
-        return 120;
-    }
 
     public boolean getIsBatHanging()
     {

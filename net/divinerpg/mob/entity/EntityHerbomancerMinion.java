@@ -26,12 +26,12 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(5); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(10); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(5); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10); // MaxHP
     }
     protected String getSlimeParticle()
     {

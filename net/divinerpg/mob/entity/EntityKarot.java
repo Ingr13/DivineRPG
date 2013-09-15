@@ -36,12 +36,12 @@ public class EntityKarot extends EntityZombie implements IBossDisplayData
     }
     
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(55); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(4000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(55); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(4000); // MaxHP
     }
 
     /**
@@ -68,11 +68,6 @@ public class EntityKarot extends EntityZombie implements IBossDisplayData
             {
                 this.setFire(8);
             }
-        }
-
-        if (!this.worldObj.isRemote)
-        {
-            this.dataWatcher.updateObject(16, this.func_110138_aP());
         }
 
         if (this.spawnTick == 0 && !this.worldObj.isRemote)

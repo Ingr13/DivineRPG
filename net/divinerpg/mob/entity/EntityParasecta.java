@@ -48,7 +48,7 @@ public class EntityParasecta extends EntityMob implements IBossDisplayData
         targetEntityClass = EntityPlayerMP.class;
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), true));
+        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), true));
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
@@ -57,24 +57,21 @@ public class EntityParasecta extends EntityMob implements IBossDisplayData
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(34); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(1900); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0); // FollowRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(34); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1900); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0); // FollowRange
     }
 
     public int getAttackStrength(Entity var1)
     {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
+        return (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
     }
 
-    public int getMaxHealth()
-    {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e();
-    }
+   
 
     /**
      * Gets the username of the entity.
@@ -97,7 +94,7 @@ public class EntityParasecta extends EntityMob implements IBossDisplayData
     protected void entityInit()
     {
         super.entityInit();
-        this.dataWatcher.addObject(16, new Integer(this.getMaxHealth()));
+        this.dataWatcher.addObject(16, new Integer((int) this.getHealth()));
     }
 
 
@@ -124,11 +121,6 @@ public class EntityParasecta extends EntityMob implements IBossDisplayData
     public void onLivingUpdate()
     {
         super.onLivingUpdate();
-
-        if (!this.worldObj.isRemote)
-        {
-            this.dataWatcher.updateObject(16, func_110138_aP());
-        }
     }
 
     /**

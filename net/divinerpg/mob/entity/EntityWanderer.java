@@ -86,10 +86,10 @@ public class EntityWanderer extends EntityVillager implements INpc, IMerchant, I
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.5); // Speed
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5); // Speed
     }
 
     /**
@@ -124,12 +124,12 @@ public class EntityWanderer extends EntityVillager implements INpc, IMerchant, I
 
             if (this.villageObj == null)
             {
-                this.func_110177_bN();
+                this.detachHome();
             }
             else
             {
                 ChunkCoordinates var1 = this.villageObj.getCenter();
-                this.func_110171_b(var1.posX, var1.posY, var1.posZ, (int)(this.villageObj.getVillageRadius() * 0.6F));
+                this.setHomeArea(var1.posX, var1.posY, var1.posZ, (int)((float)this.villageObj.getVillageRadius() * 0.6F));
 
                 if (this.field_82190_bM)
                 {
@@ -218,10 +218,6 @@ public class EntityWanderer extends EntityVillager implements INpc, IMerchant, I
         super.entityInit();
     }
 
-    public int getMaxHealth()
-    {
-        return 1000;
-    }
 
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.

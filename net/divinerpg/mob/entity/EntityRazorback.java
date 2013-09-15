@@ -22,10 +22,10 @@ public class EntityRazorback extends EntityMob
     public EntityRazorback(World var1)
     {
         super(var1);
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), false));
-        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), true));
-        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), false));
+        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), true));
+        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
@@ -35,23 +35,20 @@ public class EntityRazorback extends EntityMob
 
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(1.5); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(28); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(200); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(1.5); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(28); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(200); // MaxHP
     }
 
     public int getAttackStrength(Entity var1)
     {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
+        return (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
     }
 
-    public int getMaxHealth()
-    {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e();
-    }
+
 
 
     /**

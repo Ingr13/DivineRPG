@@ -24,8 +24,8 @@ public class EntityScorcher extends EntityMob
         this.isImmuneToFire = true;
         this.experienceValue = 20;
 
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(10); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(300); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(10); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(300); // MaxHP
     }
 
     @Override

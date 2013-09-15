@@ -52,13 +52,13 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
     public EntityRaglok(World par1)
     {
         super(par1);
-        meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), false);
+        meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), false);
         meleeAI.setMutexBits(2);
         rangedAI.setMutexBits(2);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, meleeAI);
         this.tasks.addTask(2, rangedAI);
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
@@ -77,22 +77,18 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(30); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(5000); // MaxHP
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(64.0); // FollowRange
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(30); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(5000); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(64.0); // FollowRange
     }
 
     public void manageAbilities()
     {
-        if (!this.worldObj.isRemote)
-        {
-            this.dataWatcher.updateObject(16, this.func_110138_aP());
-        }
-
+ 
         EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
 
         if (ability == DEFAULT && abilityCoolDown == 0)
@@ -103,7 +99,7 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
                 case 0:
                     ability = LIGHTNING;
                     this.rangedAttackCounter = 100;
-                    this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0);
+                    this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0);
                     break;
                 case 1:
                     ability = BLIND;

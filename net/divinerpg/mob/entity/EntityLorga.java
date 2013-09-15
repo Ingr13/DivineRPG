@@ -26,24 +26,24 @@ public class EntityLorga extends EntityMob
     {
         super(var1);
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), false));
-        this.tasks.addTask(6, new EntityAIWander(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e()));
+        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), false));
+        this.tasks.addTask(6, new EntityAIWander(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue()));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.canSpawnMinions = canSpawnMinions;
-        //TODO: Set SharedMonsterAttributes.field_111265_b to 64.0f to fix the new EntityAINearestAttackableTarget's range.
+        //TODO: Set SharedMonsterAttributes.followRange to 64.0f to fix the new EntityAINearestAttackableTarget's range.
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.lifeTick = -1;
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(4); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(15); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(4); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(15); // MaxHP
     }
 
 

@@ -28,12 +28,12 @@ public class EntityDraviteTomo extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.2); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(35); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(300); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.2); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(35); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(300); // MaxHP
     }
 
     @Override
@@ -58,7 +58,7 @@ public class EntityDraviteTomo extends EntityMob
     @Override
     public void onUpdate()
     {
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(this.entityToAttack != null ? 0.95F : 0.5F) ;
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(this.entityToAttack != null ? 0.95F : 0.5F) ;
 
         if (this.randomSoundDelay > 0 && --this.randomSoundDelay == 0)
         {

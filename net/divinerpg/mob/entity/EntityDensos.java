@@ -31,12 +31,12 @@ public class EntityDensos extends EntityMob implements IBossDisplayData
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(128.0D); // Follow Range
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(40); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(5000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(128.0D); // Follow Range
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(40); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(5000); // MaxHP
     }
 
     @Override

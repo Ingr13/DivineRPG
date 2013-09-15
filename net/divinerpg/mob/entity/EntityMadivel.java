@@ -23,9 +23,9 @@ public class EntityMadivel extends EntityMob
     {
         super(var1);
         double moveSpeed = 0.2;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(40); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(200); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(40); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(200); // MaxHP
         this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, moveSpeed, false));

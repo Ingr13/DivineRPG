@@ -21,7 +21,7 @@ public class EntityHellSpider extends EntityMob
     {
         super(var1);
         this.setSize(1.4F, 0.9F);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.8); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.8); // speed
         this.isImmuneToFire = true;
     }
 
@@ -66,10 +66,6 @@ public class EntityHellSpider extends EntityMob
         }
     }
 
-    public int getMaxHealth()
-    {
-        return 120;
-    }
 
     /**
      * Returns the Y offset from the entity's position for any entity riding this one.

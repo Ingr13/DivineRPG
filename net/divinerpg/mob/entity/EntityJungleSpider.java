@@ -20,8 +20,8 @@ public class EntityJungleSpider extends EntitySpider
         super(var1);
         this.setSize(1.4F, 0.9F);
 
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(16); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(120); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(16); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(120); // MaxHP
     }
 
 
@@ -29,7 +29,7 @@ public class EntityJungleSpider extends EntitySpider
     @Override
     public boolean attackEntityAsMob(Entity par1Entity)
     {
-        float var2 = (float)this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e();
+        float var2 = (float)this.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue();
 
         if (this.isPotionActive(Potion.damageBoost))
         {

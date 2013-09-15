@@ -60,12 +60,12 @@ public class EntityDramix extends EntityZombie implements IBossDisplayData
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.2); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(39); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(5000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.2); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(39); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(5000); // MaxHP
     }
 
     @Override
@@ -95,7 +95,7 @@ public class EntityDramix extends EntityZombie implements IBossDisplayData
     protected void entityInit()
     {
         super.entityInit();
-        this.dataWatcher.addObject(16, new Integer(this.getMaxHealth()));
+        this.dataWatcher.addObject(16, new Integer((int) this.getHealth()));
     }
 
     @SideOnly(Side.CLIENT)
@@ -118,11 +118,6 @@ public class EntityDramix extends EntityZombie implements IBossDisplayData
         if (!this.worldObj.isRemote && this.worldObj.difficultySetting > 0)
             return 39;
         return 39;
-    }
-
-    public int getMaxHealth()
-    {
-        return 5000;
     }
 
     /**

@@ -20,28 +20,24 @@ public class EntityLivingStatue extends EntityMob implements IRangedAttackMob
     public EntityLivingStatue(World var1)
     {
         super(var1);
-        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e(), 1, 60));
+        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).getAttributeValue(), 1, 60));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(180); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(0); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(180); // MaxHP
     }
 
-    public int getMaxHealth()
-    {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111126_e();
-    }
 
     public int getDamage()
     {
-        return (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e();
+        return (int) this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
     }
 
 
