@@ -25,7 +25,7 @@ public class TwilightRecipeHelper {
         GameRegistry.addRecipe(new ItemStack(TwilightBlockHelper.azuriteBlock, 1), new Object[] {"xxx", "xxx", "xxx", 'x', TwilightItemHelper.azuriteFragment});
         GameRegistry.addRecipe(new ItemStack(TwilightBlockHelper.uviteBlock, 1), new Object[] {"xxx", "xxx", "xxx", 'x', TwilightItemHelper.uviteFragment});
         GameRegistry.addRecipe(new ItemStack(TwilightBlockHelper.mythrilBlock, 1), new Object[] {"xxx", "xxx", "xxx", 'x', TwilightItemHelper.mythrilFragment});
-        GameRegistry.addRecipe(new ItemStack(VetheaBlockHelper.augiteBlock, 1), new Object[] {"xxx", "xxx", "xxx", 'x', TwilightItemHelper.augiteFragment});
+        GameRegistry.addRecipe(new ItemStack(TwilightBlockHelper.augiteBlock, 1), new Object[] {"xxx", "xxx", "xxx", 'x', TwilightItemHelper.augiteFragment});
     }
     public static void initWeapons() {
         GameRegistry.addRecipe(new ItemStack(TwilightItemHelper.DraviteBlade, 1), new Object[] {" y ", " y ", " x ", 'y', TwilightItemHelper.draviteChunk, 'x', Item.stick});

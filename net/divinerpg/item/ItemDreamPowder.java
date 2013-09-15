@@ -1,6 +1,7 @@
 package net.divinerpg.item;
 
 import net.divinerpg.helper.base.ItemDivineRPG;
+import net.divinerpg.helper.block.TwilightBlockHelper;
 import net.divinerpg.helper.block.VetheaBlockHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -22,7 +23,7 @@ public class ItemDreamPowder extends ItemDivineRPG
         else if (player.canPlayerEdit(x, y, z, var7, itemstack) && player.canPlayerEdit(x, y + 1, z, var7, itemstack))
         {
             int var11 = world.getBlockId(x, y, z);
-            int b = VetheaBlockHelper.augiteBlock.blockID;
+            int b = TwilightBlockHelper.augiteBlock.blockID;
 
             if (var11 == b && world.isAirBlock(x, y + 1, z))
             {

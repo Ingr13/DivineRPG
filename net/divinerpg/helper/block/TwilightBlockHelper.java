@@ -60,8 +60,9 @@ public class TwilightBlockHelper {
     public static final Block AugiteLeaves = new ModLeaves(x.AugiteLeavesID, "Augite").registerTexture("AugiteLeaves").setHardness(5.0F).setUnlocalizedName("AugLeaves").setCreativeTab(DivineRPG.Twilight);
     public static final Block AugiteGrass = new BlockAugiteGrass(x.AugiteGrassID).setHardness(15.0F).setUnlocalizedName("AugiteGrass").setStepSound(Block.soundGrassFootstep).setCreativeTab(DivineRPG.Twilight);
     public static final Block AugiteDirt = new ModDirt(x.AugiteDirtID).registerTexture("AugiteGrass_Bottom").setStepSound(Block.soundGravelFootstep).setHardness(15.0F).setUnlocalizedName("AugiteDirt").setCreativeTab(DivineRPG.Twilight);
+    public static final Block augiteBlock = new ModBlock(x.AugiteBlockID).registerTexture("AugiteBlock").setUnlocalizedName("AugiteBlock").setHardness(7.0F).setCreativeTab(DivineRPG.Twilight);
 
-    public static final Block uviteBlock = new ModBlock(x.AugiteBlockID).registerTexture("UviteBlock").setUnlocalizedName("UviteBlock").setHardness(7.0F).setCreativeTab(DivineRPG.Twilight);
+    public static final Block uviteBlock = new ModBlock(x.UviteBlockID).registerTexture("UviteBlock").setUnlocalizedName("UviteBlock").setHardness(7.0F).setCreativeTab(DivineRPG.Twilight);
     public static final BlockMythrilPortal MythrilPortal = (BlockMythrilPortal) new BlockMythrilPortal(x.MythrilPortalID).registerTexture("MythrilPortal").setUnlocalizedName("MythPor").setBlockUnbreakable().setCreativeTab(DivineRPG.Twilight);
     public static final Block MythrilGrass = new BlockMythrilGrass(x.MythrilGrassID).setHardness(15.0F).setUnlocalizedName("MythrilGrass").setStepSound(Block.soundGrassFootstep).setCreativeTab(DivineRPG.Twilight);
     public static final Block MythrilDirt = new ModDirt(x.MythrilDirtID).registerTexture("MythrilGrass_Bottom").setStepSound(Block.soundGravelFootstep).setHardness(15.0F).setUnlocalizedName("MythrilDirt").setCreativeTab(DivineRPG.Twilight);
@@ -123,5 +124,7 @@ public class TwilightBlockHelper {
         LanguageRegistry.addName(uviteLeaves, "Uvite Leaves");
         LanguageRegistry.addName(azuriteVine, "Azurite Vine");
         LanguageRegistry.addName(UvitePortal, "Uvite Portal");		
+        LanguageRegistry.addName(augiteBlock, "Augite Block");
+
     }
 }

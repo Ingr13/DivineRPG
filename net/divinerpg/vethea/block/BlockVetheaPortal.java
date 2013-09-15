@@ -2,24 +2,19 @@ package net.divinerpg.vethea.block;
 
 import java.util.Random;
 
-import net.divinerpg.dravite.gen.TeleporterDravite;
 import net.divinerpg.helper.DimensionRegistry;
 import net.divinerpg.helper.base.BreakableBase;
-import net.divinerpg.helper.block.VetheaBlockHelper;
+import net.divinerpg.helper.block.TwilightBlockHelper;
 import net.divinerpg.render.portalFX.EntityMythrilPortalFX;
 import net.divinerpg.vethea.TeleporterVethea;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -137,7 +132,7 @@ public class BlockVetheaPortal extends BreakableBase
                             if (var10 != Block.blockSnow.blockID)
                                 return false;
                         }
-                        else if (var10 != 0 && var10 != VetheaBlockHelper.augiteBlock.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.augiteBlock.blockID)
                             return false;
                     }
                 }
@@ -149,7 +144,7 @@ public class BlockVetheaPortal extends BreakableBase
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    world.setBlock(x + var5 * var7, y + var8, z + var6 * var7, VetheaBlockHelper.augiteBlock.blockID);
+                    world.setBlock(x + var5 * var7, y + var8, z + var6 * var7, TwilightBlockHelper.augiteBlock.blockID);
                 }
             }
 

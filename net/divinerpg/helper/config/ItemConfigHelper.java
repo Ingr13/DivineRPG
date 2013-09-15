@@ -402,6 +402,8 @@ public class ItemConfigHelper {
     public static int spinebackDiscID;
     public static int spinebackHammerID;
     public static int spinebackStaffID;
+    
+    public static int barredDoorItemID;
 
     public static int everlightID;
     public static int everbrightID;
@@ -1054,8 +1056,10 @@ public class ItemConfigHelper {
 
 		TwilightAppleID = config.getItem("TwilightApple", 3483).getInt();
 		
-		//ID = config.getItem("", 3484).getInt();
+		barredDoorItemID = config.getItem("BarredDoorItem", 3484).getInt();
 		
+		//ID = config.getItem("", 3485).getInt();
+
 		config.save();
 		}
 }

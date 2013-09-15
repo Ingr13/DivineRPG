@@ -54,16 +54,16 @@ public class IceikaItemHelper {
 	public static final Item fractiteCannon = new ItemFractiteCannon(x.fractiteCannonID).registerTextures("FractiteCannon").setUnlocalizedName("fractiteCannon").setCreativeTab(DivineRPG.Iceika);
 	public static final Item snowFlakeShuriken = new ItemSnowflakeShuriken(x.SnowflakeShurikenID).registerTextures("SnowFlakeShuriken").setUnlocalizedName("snowFlakeShuriken").setCreativeTab(DivineRPG.Iceika);
 	public static final Item snowStormBow = new ItemSnowStormBow(x.SnowstormBowID).setUnlocalizedName("SnowstormBow").setCreativeTab(DivineRPG.Iceika);
-	public static final Item pepperMints = new ItemDivineRPGFood(x.PeppermintsID, 1, 0.3F, false).registerTextures("Peppermints").setUnlocalizedName("pepperMints");
+	public static final Item pepperMints = new ItemDivineRPGFood(x.PeppermintsID, 1, 0.3F, false).registerTextures("Peppermints").setUnlocalizedName("pepperMints").setCreativeTab(DivineRPG.Iceika);
 	public static final Item eggNog = new ItemEggNog(x.EggNogID).registerTextures("EggNog").setUnlocalizedName("eggNog").setCreativeTab(DivineRPG.Iceika);
-	public static final Item chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).registerTextures("ChocolateLog").setUnlocalizedName("chocolateLog");
-	public static final Item snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).registerTextures("SnowCones").setUnlocalizedName("snowCones");
-	public static final Item fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).registerTextures("FruitCake").setUnlocalizedName("fruitCake");
+	public static final Item chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).registerTextures("ChocolateLog").setUnlocalizedName("chocolateLog").setCreativeTab(DivineRPG.Iceika);
+	public static final Item snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).registerTextures("SnowCones").setUnlocalizedName("snowCones").setCreativeTab(DivineRPG.Iceika);
+	public static final Item fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).registerTextures("FruitCake").setUnlocalizedName("fruitCake").setCreativeTab(DivineRPG.Iceika);
 
-	public static final Item santaHead = new ItemSantaArmor(x.SantaHeadID, santa, 0, 0).setUnlocalizedName("SantaHelmet");
-	public static final Item santaBody = new ItemSantaArmor(x.SantaBodyID, santa, 1, 1).setUnlocalizedName("SantaBody");
-	public static final Item santaLegs = new ItemSantaArmor(x.SantaLegsID, santa,2, 2).setUnlocalizedName("SantaLegs");
-	public static final Item santaBoots = new ItemSantaArmor(x.SantaBootsID, santa, 3, 3).setUnlocalizedName("SantaBoots");
+	public static final Item santaHead = new ItemSantaArmor(x.SantaHeadID, santa, 0, 0).setUnlocalizedName("SantaHelmet").setCreativeTab(DivineRPG.Iceika);
+	public static final Item santaBody = new ItemSantaArmor(x.SantaBodyID, santa, 1, 1).setUnlocalizedName("SantaBody").setCreativeTab(DivineRPG.Iceika);
+	public static final Item santaLegs = new ItemSantaArmor(x.SantaLegsID, santa,2, 2).setUnlocalizedName("SantaLegs").setCreativeTab(DivineRPG.Iceika);
+	public static final Item santaBoots = new ItemSantaArmor(x.SantaBootsID, santa, 3, 3).setUnlocalizedName("SantaBoots").setCreativeTab(DivineRPG.Iceika);
 
 	public static final Item frossivence = new ItemMassivence(x.FrossivenceID, EnumToolMaterial.WOOD).registerTextures("Frossivence").setUnlocalizedName("frossivence").setCreativeTab(DivineRPG.Iceika);
 
