@@ -2,6 +2,7 @@ package net.divinerpg.mob.entity;
 
 import net.divinerpg.helper.item.VetheaItemHelper;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIControlledByPlayer;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -53,10 +54,6 @@ public class EntityMount extends EntityAnimal
         return true;
     }
 
-    public int getMaxHealth()
-    {
-        return 10;
-    }
 
     @Override
     protected void updateAITasks()

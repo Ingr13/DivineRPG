@@ -25,12 +25,12 @@ public class EntityAncient extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.5); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(16); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(4000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(16); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(4000); // MaxHP
     }
 
     @Override
@@ -46,10 +46,7 @@ public class EntityAncient extends EntityMob
         return "The Ancient Entity";
     }
 
-    public int getDragonHealth()
-    {
-        return (int) this.func_110138_aP();
-    }
+
 
     @Override
     public void onLivingUpdate()

@@ -48,8 +48,8 @@ public class EntityMoonWolf extends EntityTameable
         super(var1);
 
         float moveSpeed = 0.56F;
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(moveSpeed); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(200); // MaxHP
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(moveSpeed); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(200); // MaxHP
         this.setSize(0.6F, 0.8F);
         this.getNavigator().setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
@@ -395,7 +395,7 @@ public class EntityMoonWolf extends EntityTameable
                     this.setPathToEntity((PathEntity)null);
                     this.setAttackTarget((EntityLivingBase)null);
                     this.aiSit.setSitting(true);
-                    this.setEntityHealth(20);
+                    this.setHealth(20);
                     this.setOwner(var1.username);
                     this.playTameEffect(true);
                     this.worldObj.setEntityState(this, (byte)7);

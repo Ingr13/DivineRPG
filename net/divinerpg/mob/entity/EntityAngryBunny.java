@@ -32,12 +32,12 @@ public class EntityAngryBunny extends EntityMob
 	}
 
 	@Override
-	protected void func_110147_ax()
+	protected void applyEntityAttributes()
 	{
-		super.func_110147_ax();
-		this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.56); // Speed
-		this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(18); // Attack
-		this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(60.0D);
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.56); // Speed
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(18); // Attack
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(60.0D);
 	}
 
 

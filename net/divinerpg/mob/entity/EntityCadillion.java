@@ -27,12 +27,12 @@ public class EntityCadillion extends EntityMob
     }
 
     @Override
-    protected void func_110147_ax()
+    protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4); // speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(25); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(160); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.4); // speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(25); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(160); // MaxHP
     }
 
     @Override
@@ -57,7 +57,7 @@ public class EntityCadillion extends EntityMob
     @Override
     public void onUpdate()
     {
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(this.entityToAttack != null ? 0.95F : 0.5F);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(this.entityToAttack != null ? 0.95F : 0.5F);
         super.onUpdate();
     }
 

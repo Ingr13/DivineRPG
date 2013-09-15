@@ -20,12 +20,12 @@ public class EntityAyeracoGreen extends EntityAyeraco
         super (par1World, "Green");
     }
     @Override
-    public void func_110147_ax()
+    public void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.25); // Speed
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(48); // Attack
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(1000); // MaxHP
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25); // Speed
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(48); // Attack
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(1000); // MaxHP
     }
     @Override
     protected boolean canBlockProjectiles()
