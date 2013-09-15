@@ -139,16 +139,6 @@ public class EntityEnderTriplets extends EntityMob
             }
         }
 
-        if (!this.worldObj.isRemote)
-        {
-            byte var21 = this.dataWatcher.getWatchableObjectByte(16);
-            byte var12 = (byte)(this.attackCounter > 10 ? 1 : 0);
-
-            if (var21 != var12)
-            {
-                this.dataWatcher.updateObject(16, Byte.valueOf(var12));
-            }
-        }
     }
 
     /**

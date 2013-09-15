@@ -7,28 +7,31 @@ import net.divinerpg.arcana.item.ItemOreDoor3;
 import net.divinerpg.arcana.item.ItemOreDoor4;
 import net.divinerpg.helper.base.ItemDivineRPG;
 import net.divinerpg.helper.base.ItemDivineRPGFood;
+import net.divinerpg.helper.config.ItemConfigHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ArcanaItemHelper {
+	
+	public static ItemConfigHelper x;
 
 	//public static final Item weakArcanaPotion = new ItemArcanaPotion(4407, 0).registerTextures("WeakArcanaPotion").setUnlocalizedName("WeakArcana");
 	//public static final Item strongArcanaPotion = new ItemArcanaPotion(4408, 0).registerTextures("StrongArcanaPotion").setUnlocalizedName("StrongArcana");
-	public static final Item fireStockItem = new ItemDivineRPG(1000).registerTextures("FireStock").setUnlocalizedName("fireStockItem").setCreativeTab(DivineRPG.Arcana);
+	public static final Item fireStockItem = new ItemDivineRPG(x.fireStockItemID).registerTextures("FireStock").setUnlocalizedName("fireStockItem").setCreativeTab(DivineRPG.Arcana);
 	// public static final Item fireStockSeeds = new ItemDivineRPGSeeds(4410, OverworldBlockHelper.fireStock.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("FireStockSeeds").setUnlocalizedName("fireStockSeeds").setCreativeTab(DivineRPG.DivineFood);
 	//public static final Item pinFlyItem = new ItemPinFly(4411, 2, 0.3F, false).registerTextures("PinFly").setUnlocalizedName("pinflyItem").setCreativeTab(DivineRPG.DivineFood);
 	// public static final Item pinFlySeeds = new ItemDivineRPGSeeds(4412, OverworldBlockHelper.pinFly.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("PinFlySeeds").setUnlocalizedName("pinFlySeeds").setCreativeTab(DivineRPG.DivineFood);
-	public static final Item hitchakItem = new ItemDivineRPGFood(1001, 2, 3.0F, false).registerTextures("Hitchak").setUnlocalizedName("hitchakItem").setCreativeTab(DivineRPG.Arcana);
+	public static final Item hitchakItem = new ItemDivineRPGFood(x.hitchakItemID, 2, 3.0F, false).registerTextures("Hitchak").setUnlocalizedName("hitchakItem").setCreativeTab(DivineRPG.Arcana);
 	//public static final Item hitchakSeeds = new ItemDivineRPGSeeds(4414, OverworldBlockHelper.hitchak.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("HitchakSeeds").setUnlocalizedName("hitchakSeeds").setCreativeTab(DivineRPG.DivineFood);
 	//public static final Item eucalyptusRootSeeds = new ItemDivineRPGSeeds(4415, OverworldBlockHelper.eucalyptusRoot.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("EucalyptusRootSeeds").setUnlocalizedName("eucalyptusRootSeeds").setCreativeTab(DivineRPG.DivineFood);
-	public static final Item veiloItem = new ItemDivineRPG(1002).registerTextures("Veilo").setUnlocalizedName("veiloItem").setCreativeTab(DivineRPG.Arcana);
+	public static final Item veiloItem = new ItemDivineRPG(x.veiloItemID).registerTextures("Veilo").setUnlocalizedName("veiloItem").setCreativeTab(DivineRPG.Arcana);
 	//public static final Item veiloSeeds = new ItemDivineRPGSeeds(4417, OverworldBlockHelper.veilo.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("VeiloSeeds").setUnlocalizedName("veiloSeeds").setCreativeTab(DivineRPG.DivineFood);
 	//public static final Item lamonaItem = new ItemLamona(4418).registerTextures("Lamona").setUnlocalizedName("lamonaItem").setCreativeTab(DivineRPG.DivineFood);
 	//public static final Item lamonaSeeds = new ItemDivineRPGSeeds(4419, OverworldBlockHelper.lamona.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("LamonaSeeds").setUnlocalizedName("lamonaSeeds").setCreativeTab(DivineRPG.DivineFood);
 	//public static final Item aquamarineItem = new ItemAquaMarine(4420).registerTextures("Aquamarine").setUnlocalizedName("aquamarineItem").setCreativeTab(DivineRPG.DivineFood);
 	//public static final Item aquamarineSeeds = new ItemDivineRPGSeeds(4421, OverworldBlockHelper.aquamarine.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("AquamarineSeeds").setUnlocalizedName("aquamarineSeeds").setCreativeTab(DivineRPG.DivineFood);
-	public static final Item marsineItem = new ItemDivineRPG(1003).registerTextures("Marasine").setUnlocalizedName("marsineItem").setCreativeTab(DivineRPG.Arcana);
+	public static final Item marsineItem = new ItemDivineRPG(x.marsineItemID).registerTextures("Marasine").setUnlocalizedName("marsineItem").setCreativeTab(DivineRPG.Arcana);
 	/*public static final Item marsineSeeds = new ItemDivineRPGSeeds(4423, OverworldBlockHelper.marsine.blockID, OverworldBlockHelper.arcaniteGrass.blockID).registerTextures("MarasineSeeds").setUnlocalizedName("marsineSeeds").setCreativeTab(DivineRPG.DivineFood);
 	    //public static final Item reflector = new ItemReflector(4424).registerTextures("ArcaniumReflector").setCreativeTab(DivineRPG.DivineSword).setUnlocalizedName("reflector");
 
@@ -67,20 +70,20 @@ public class ArcanaItemHelper {
 	    public static final Item vemosBoots = new ItemArmorVemos(4451, korma, 3, BOOTS).setUnlocalizedName("VemosBoots").setCreativeTab(DivineRPG.DivineArmor);
 	 */
 
-	public static final Item key = new ItemDivineRPG(1004).registerTextures("Key").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
-	public static final Item key1 = new ItemDivineRPG(1005).registerTextures("Key1").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
-	public static final Item key2 = new ItemDivineRPG(1006).registerTextures("Key2").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
-	public static final Item key3 = new ItemDivineRPG(1007).registerTextures("Key3").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
+	public static final Item key = new ItemDivineRPG(x.key1ID).registerTextures("Key").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
+	public static final Item key1 = new ItemDivineRPG(x.key2ID).registerTextures("Key1").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
+	public static final Item key2 = new ItemDivineRPG(x.key3ID).registerTextures("Key2").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
+	public static final Item key3 = new ItemDivineRPG(x.key4ID).registerTextures("Key3").setUnlocalizedName("Key").setCreativeTab(DivineRPG.Arcana);
 
-	public static final Item OreDoor1 = new ItemOreDoor1(1008, Material.wood).registerTextures("OreDoor1").setUnlocalizedName("OreDoor1").setCreativeTab(DivineRPG.Arcana);
-	public static final Item OreDoor2 = new ItemOreDoor2(1009, Material.wood).registerTextures("OreDoor2").setUnlocalizedName("OreDoor2").setCreativeTab(DivineRPG.Arcana);
-	public static final Item OreDoor3 = new ItemOreDoor3(1010, Material.wood).registerTextures("OreDoor3").setUnlocalizedName("OreDoor3").setCreativeTab(DivineRPG.Arcana);
-	public static final Item OreDoor4 = new ItemOreDoor4(1011, Material.wood).registerTextures("OreDoor4").setUnlocalizedName("OreDoor4").setCreativeTab(DivineRPG.Arcana);
+	public static final Item OreDoor1 = new ItemOreDoor1(x.oreDoorItem1ID, Material.wood).registerTextures("OreDoor1").setUnlocalizedName("OreDoor1").setCreativeTab(DivineRPG.Arcana);
+	public static final Item OreDoor2 = new ItemOreDoor2(x.oreDoor2ItemID, Material.wood).registerTextures("OreDoor2").setUnlocalizedName("OreDoor2").setCreativeTab(DivineRPG.Arcana);
+	public static final Item OreDoor3 = new ItemOreDoor3(x.oreDoor3ItemID, Material.wood).registerTextures("OreDoor3").setUnlocalizedName("OreDoor3").setCreativeTab(DivineRPG.Arcana);
+	public static final Item OreDoor4 = new ItemOreDoor4(x.oreDoor4ItemID, Material.wood).registerTextures("OreDoor4").setUnlocalizedName("OreDoor4").setCreativeTab(DivineRPG.Arcana);
 
-	public static final Item arcanium = new ItemDivineRPG(1012).registerTextures("Arcanium").setUnlocalizedName("acanium").setCreativeTab(DivineRPG.Arcana);
-	public static final Item collectorFragments = new ItemDivineRPG(1013).registerTextures("CollectorFragment").setUnlocalizedName("collectorFragments").setCreativeTab(DivineRPG.Arcana);
-	public static final Item collector = new ItemDivineRPG(1014).registerTextures("CollectorCharged").setUnlocalizedName("CollectorCharged").setCreativeTab(DivineRPG.Arcana);
-	public static final Item dungeonToken = new ItemDivineRPG(1015).registerTextures("DungeonTokens").setUnlocalizedName("dungeonToken").setCreativeTab(DivineRPG.Arcana);
+	public static final Item arcanium = new ItemDivineRPG(x.arcaniumID).registerTextures("Arcanium").setUnlocalizedName("acanium").setCreativeTab(DivineRPG.Arcana);
+	public static final Item collectorFragments = new ItemDivineRPG(x.collectorFragmentsID).registerTextures("CollectorFragment").setUnlocalizedName("collectorFragments").setCreativeTab(DivineRPG.Arcana);
+	public static final Item collector = new ItemDivineRPG(x.collectorID).registerTextures("CollectorCharged").setUnlocalizedName("CollectorCharged").setCreativeTab(DivineRPG.Arcana);
+	public static final Item dungeonToken = new ItemDivineRPG(x.dungeonTokenID).registerTextures("DungeonTokens").setUnlocalizedName("dungeonToken").setCreativeTab(DivineRPG.Arcana);
 
 	public static void addNames()
 	{

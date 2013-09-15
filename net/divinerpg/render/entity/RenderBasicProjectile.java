@@ -29,7 +29,7 @@ public class RenderBasicProjectile extends Render
     public void renderProjectile(EntityThrowable projectile, double x, double y, double z)
     {
         GL11.glPushMatrix();
-        this.getEntityTexture(projectile);
+        this.bindEntityTexture(projectile);
         GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(scale * 0.5F, scale * 0.5F, scale * 0.5F);
@@ -68,7 +68,6 @@ public class RenderBasicProjectile extends Render
 
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) {
-		// TODO Auto-generated method stub
 		return texture;
 	}
 }

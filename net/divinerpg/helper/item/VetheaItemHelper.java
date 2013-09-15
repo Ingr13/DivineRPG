@@ -2,6 +2,7 @@ package net.divinerpg.helper.item;
 
 import net.divinerpg.DivineRPG;
 import net.divinerpg.helper.base.ItemDivineRPG;
+import net.divinerpg.helper.config.ItemConfigHelper;
 import net.divinerpg.item.ItemAmthirmisDisk;
 import net.divinerpg.item.ItemArksianeDisk;
 import net.divinerpg.item.ItemBarredDoor;
@@ -33,6 +34,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class VetheaItemHelper {
 
+	public static ItemConfigHelper x;
+	
     public static int HEAD = 0;
     public static int BODY = 1;
     public static int LEGS = 2;

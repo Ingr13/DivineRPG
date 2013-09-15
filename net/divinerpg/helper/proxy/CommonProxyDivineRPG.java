@@ -22,6 +22,7 @@ public class CommonProxyDivineRPG {
     public void preInit(FMLPreInitializationEvent event)
     {         
 		BlockConfigHelper.initConfig(event);
+		ItemConfigHelper.initConfig(event);
 		
         NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHandler());
         NameHelper.addNames();

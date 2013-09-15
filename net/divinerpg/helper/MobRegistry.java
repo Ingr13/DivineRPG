@@ -236,6 +236,7 @@ public class MobRegistry {
 
         //End
         EntityRegistry.addSpawn(EntityEnderWatcher.class, 10, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
+        EntityRegistry.addSpawn(EntityEnderTriplets.class, 4, 2, 2, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
 
         //Jungle
         EntityRegistry.addSpawn(EntityJungleDramcryx.class, 20, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.jungle, BiomeGenBase.jungleHills});

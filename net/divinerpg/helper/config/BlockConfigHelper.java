@@ -136,7 +136,7 @@ public class BlockConfigHelper{
 	
 	
     public static void initConfig(FMLPreInitializationEvent event) {
-		File file = new File(event.getModConfigurationDirectory(), "DivineRPGBlock.cfg");
+		File file = new File(event.getModConfigurationDirectory(), "DivineRPGBlocks.cfg");
 		Configuration config = new Configuration(file);
 		
 		config.load();
