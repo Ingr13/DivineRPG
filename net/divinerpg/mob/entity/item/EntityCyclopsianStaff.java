@@ -29,7 +29,7 @@ public class EntityCyclopsianStaff extends EntityThrowable
     {
         super(var1, var2, var4, var6);
     }
-    @SideOnly(Side.CLIENT)
+   /* @SideOnly(Side.CLIENT)
     @Override
     public void onUpdate()
     {
@@ -40,7 +40,7 @@ public class EntityCyclopsianStaff extends EntityThrowable
         	EntityGreenPortalFX var20 = new EntityGreenPortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
-    }
+    }*/
 
     /**
      * Called when this EntityThrowable hits a block or entity.
