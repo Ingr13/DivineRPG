@@ -16,7 +16,7 @@ public class AchievementPageDivineRPG
     public static final Achievement divineInervention = (new Achievement(2002, "divineintervention", 0, 3, OverworldItemHelper.watchingEye, null)).registerAchievement();
     public static final Achievement	divinePlan = (new Achievement(2001, "divineplan", 1, 4, OverworldItemHelper.divineSword, divineInervention)).registerAchievement();
     public static final Achievement liesWithin = (new Achievement(2003, "lieswithin", 0, 5, ArcanaBlockHelper.arcanaPortalFrame, null)).registerAchievement();
-    //public static final Achievement	perfectlyCorrupted = (new Achievement(2006, "perfectlycorrupted", 5, 0, OverworldBlockHelper.superEnchantMentTable, null)).registerAchievement();
+    //public static final Achievement perfectlyCorrupted = (new Achievement(2006, "perfectlycorrupted", 5, 0, OverworldBlockHelper.superEnchantMentTable, null)).registerAchievement();
     public static final Achievement	totalDemonization = (new Achievement(2007, "totaldemonization", 3, 11, ArcanaBlockHelper.demonFurnace, liesWithin)).registerAchievement();
     public static final Achievement greatBirdFire = (new Achievement(2008, "evildisease", 3, 9, ArcanaItemHelper.dungeonToken, liesWithin)).registerAchievement();
     public static final Achievement dungeonMaster = (new Achievement(2009, "dungeonMaster", 3, 4, ArcanaItemHelper.dungeonToken, liesWithin)).registerAchievement();
@@ -24,7 +24,7 @@ public class AchievementPageDivineRPG
     public static final Achievement tripleDanger = (new Achievement(2011, "tripleDanger", 2, 0, OverworldItemHelper.enderShard, null)).registerAchievement();
     public static final Achievement	possibilities = (new Achievement(2012, "possibilities", 2, 3, OverworldBlockHelper.divineRock, divineInervention)).registerAchievement();
     public static final Achievement friendOrFoe = (new Achievement(2004, "friendorfoe", 4, 3, TwilightItemHelper.draviteSoul, possibilities)).registerAchievement();
-    //public static final Achievement darkAnotherDay = (new Achievement(2026, "darkanotherday", 6, 3, TwilightBlockHelper.denseBlock, possibilities)).registerAchievement();
+    public static final Achievement darkAnotherDay = (new Achievement(2026, "darkanotherday", 6, 3, TwilightBlockHelper.augiteBlock, possibilities)).registerAchievement();
     //public static final Achievement tenHeadsIsBetterThanOne = (new Achievement(2005, "Spawn Densos and Reyvor", 6, 2, TwilightItemHelper.spawnDensos, darkAnotherDay)).registerAchievement();
     public static final Achievement whenPigsFly = (new Achievement(2027, "whenpigsfly", 3, 2, OverworldItemHelper.angelicHelmet, divineInervention)).registerAchievement();
     public static final Achievement offKey = (new Achievement(2029, "offkey", 6, 0, OverworldItemHelper.soundOfMusic, null)).registerAchievement();
@@ -40,7 +40,7 @@ public class AchievementPageDivineRPG
     public static final Achievement feedingOnTheFish = (new Achievement(2020, "feedingonthefish", 3, 0, OverworldItemHelper.sharkFin, null)).registerAchievement();
     //public static final Achievement arrowToTheKnee = (new Achievement(2021, "arrototheknee", 6, 4, TwilightItemHelper.AzuriteArrow, darkAnotherDay)).registerAchievement();
     public static final Achievement frozenLand= (new Achievement(2022, "frozenland", 0, 1, IceikaBlockHelper.IceikaPortal, null)).registerAchievement();
-    //public static final Achievement frozenGoods = (new Achievement(2023, "frozengoods", 7, 1, IceikaBlockHelper.iceikaChest, frozenLand)).registerAchievement();
+    public static final Achievement frozenGoods = (new Achievement(2023, "frozengoods", 7, 1, IceikaBlockHelper.frostedChest, frozenLand)).registerAchievement();
     //public static final Achievement lilGift = (new Achievement(2024, "lilgift", 7, 0, IceikaBlockHelper.giftBox, frozenGoods)).registerAchievement();
     //public static final Achievement lilTinkerin = (new Achievement(2025, "liltinkerin", 7, 2, OverworldItemHelper.frozenMaul, frozenGoods)).registerAchievement();
 
@@ -50,9 +50,9 @@ public class AchievementPageDivineRPG
 			totalDemonization, greatBirdFire, dungeonMaster,
 			eyeOfEvil, tripleDanger, possibilities, /*enrichment,*/ hoterthanHell, /*mealToRemember, yuk,
 			littleCreature,*/ halloweenSpirit,
-			/*oneLamp,*/ feedingOnTheFish, /*arrowToTheKnee,*/ frozenLand, /*frozenGoods, lilGift,
-			lilTinkerin, darkAnotherDay,
-			skyHigh,*/ whenPigsFly, offKey/*, allHellLoose*/);
+			/*oneLamp,*/ feedingOnTheFish, /*arrowToTheKnee,*/ frozenLand, frozenGoods, /*lilGift,
+			lilTinkerin, 
+			skyHigh,*/ whenPigsFly, offKey/*, allHellLoose*/, darkAnotherDay);
     
     public static void Init()
     {    

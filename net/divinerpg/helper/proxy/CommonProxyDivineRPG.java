@@ -15,12 +15,9 @@ import cpw.mods.fml.relauncher.*;
 
 public class CommonProxyDivineRPG {
 	
-    public void registerRenderInformation()
-    {        
-    }
+    public void registerRenderInformation(){ }
 
-    public void preInit(FMLPreInitializationEvent event)
-    {         
+    public void preInit(FMLPreInitializationEvent event) {         
 		BlockConfigHelper.initConfig(event);
 		ItemConfigHelper.initConfig(event);
 		VetheaConfigHelper.initConfig(event);
@@ -39,8 +36,7 @@ public class CommonProxyDivineRPG {
         GameRegistry.registerPlayerTracker(new ArcanaHelper());
     }
 
-    public void init(FMLInitializationEvent event)
-    {        
+    public void init(FMLInitializationEvent event){        
         CreativeTabName.init();  
         AchievementPageDivineRPG.Init();
     }

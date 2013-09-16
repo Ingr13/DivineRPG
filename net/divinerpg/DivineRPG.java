@@ -46,9 +46,6 @@ public class DivineRPG {
     public static final CreativeTabs Iceika = new TabIceika("Iceika");
     public static final CreativeTabs Twilight = new TabTwilight("Twilight");
 
-    
-
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {	  
@@ -62,11 +59,8 @@ public class DivineRPG {
     }	
     
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {}
+    public void postInit(FMLPostInitializationEvent event) {}
     
     @EventHandler
-    public void serverStarting(FMLServerStartingEvent event){
-    	
-    }
+    public void serverStarting(FMLServerStartingEvent event){}
 }

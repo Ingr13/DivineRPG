@@ -52,7 +52,7 @@ public class ItemCyclopseStaff extends ItemsBase
 
 				if(itemID == OverworldItemHelper.cyclopseStaff.itemID)
 				{
-					var2.playSoundAtEntity(var3, Sound.Phaser, 1.0F, 1.0F);
+					var2.playSoundAtEntity(var3, Sound.Staff, 1.0F, 1.0F);
 					var2.spawnEntityInWorld(new EntityCyclopsianStaff(var2, var3));
 					var1.damageItem(1, var3);
 				}
