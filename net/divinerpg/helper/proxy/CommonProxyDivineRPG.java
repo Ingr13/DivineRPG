@@ -23,6 +23,7 @@ public class CommonProxyDivineRPG {
     {         
 		BlockConfigHelper.initConfig(event);
 		ItemConfigHelper.initConfig(event);
+		VetheaConfigHelper.initConfig(event);
 		
         NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHandler());
         NameHelper.addNames();

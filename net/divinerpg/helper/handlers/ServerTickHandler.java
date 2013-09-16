@@ -1,9 +1,20 @@
 package net.divinerpg.helper.handlers;
 
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.Iterator;
 
 import net.divinerpg.arcana.ArcanaHelper;
+import net.divinerpg.helper.DimensionRegistry;
+import net.divinerpg.helper.item.IceikaItemHelper;
+import net.divinerpg.helper.item.OverworldItemHelper;
+import net.divinerpg.helper.item.TwilightItemHelper;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.server.MinecraftServer;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
@@ -42,7 +53,7 @@ public class ServerTickHandler implements ITickHandler
 
 	public void onTickInGame()
 	{
-		/**ArrayList var3 = (ArrayList)MinecraftServer.getServer().getConfigurationManager().playerEntityList;
+		ArrayList var3 = (ArrayList)MinecraftServer.getServer().getConfigurationManager().playerEntityList;
 		Iterator var4 = var3.iterator();
 
 		while (var4.hasNext())
@@ -82,26 +93,28 @@ public class ServerTickHandler implements ITickHandler
 				var5.capabilities.allowFlying = false;
 			}
 
-			/*if (bootID == DivineRPG.krakenBoots.itemID
-					&& legID == DivineRPG.krakenLegs.itemID
-					&& chestID == DivineRPG.krakenBody.itemID
-					&& helmID == DivineRPG.krakenHead.itemID)
+			if (bootID == OverworldItemHelper.krakenBoots.itemID
+					&& legID == OverworldItemHelper.krakenLegs.itemID
+					&& chestID == OverworldItemHelper.krakenBody.itemID
+					&& helmID == OverworldItemHelper.krakenHelmet.itemID)
 			{
 				var5.setAir(300);
-			}*/
-			/*else if (bootID == DivineRPG.aquastriveBoots.itemID
-					&& legID == DivineRPG.aquastriveLegs.itemID
-					&& chestID == DivineRPG.aquastriveBody.itemID
-					&& helmID == DivineRPG.aquastriveHead.itemID)
+			}
+			else if (bootID == OverworldItemHelper.aquaticBoots.itemID
+					&& legID == OverworldItemHelper.aquaticLegs.itemID
+					&& chestID == OverworldItemHelper.aquaticBody.itemID
+					&& helmID == OverworldItemHelper.aquaticHelmet.itemID)
 			{
 				var5.setAir(300);
-			}*/
-			/*else if (bootID == DivineRPG.shadowBoots.itemID
-					&& legID == DivineRPG.shadowLegs.itemID
-					&& chestID == DivineRPG.shadowBody.itemID
-					&& helmID == DivineRPG.shadowHead.itemID)
+			}
+			else if (bootID == OverworldItemHelper.shadowBoots.itemID
+					&& legID == OverworldItemHelper.shadowLegs.itemID
+					&& chestID == OverworldItemHelper.shadowBody.itemID
+					&& helmID == OverworldItemHelper.shadowHelmet.itemID)
 			{
-			}*/
+
+			}
+
 			/*else if (bootID == DivineRPG.kormaBoots.itemID
 					&& legID == DivineRPG.kormaLegs.itemID
 					&& chestID == DivineRPG.kormaBody.itemID
@@ -127,13 +140,13 @@ public class ServerTickHandler implements ITickHandler
 					this.healTimer++;
 				}
 			}*/
-			/*else if (bootID == DivineRPG.angelicBoots.itemID
-					&& legID == DivineRPG.angelicLegs.itemID
-					&& chestID == DivineRPG.angelicBody.itemID
-					&& helmID == DivineRPG.angelicHead.itemID)
+			else if (bootID == OverworldItemHelper.angelicBoots.itemID
+					&& legID == OverworldItemHelper.angelicLegs.itemID
+					&& chestID == OverworldItemHelper.angelicBody.itemID
+					&& helmID == OverworldItemHelper.angelicHelmet.itemID)
 			{
 				var5.fallDistance = 0.0F;
-			}*/
+			}
 			/*else if (bootID == DivineRPG.bedrockBoots.itemID
 					&& legID == DivineRPG.bedrockLegs.itemID
 					&& chestID == DivineRPG.bedrockBody.itemID
@@ -141,10 +154,10 @@ public class ServerTickHandler implements ITickHandler
 			{
 				var5.fallDistance = 0.0F;
 			}*/
-			/*else if (bootID == DivineRPG.skeleManBoots.itemID
-					&& legID == DivineRPG.skeleManLegs.itemID
-					&& chestID == DivineRPG.skeleManBody.itemID
-					&& helmID == DivineRPG.skeleManHead.itemID
+			else if (bootID == OverworldItemHelper.grimReaperBoots.itemID
+					&& legID == OverworldItemHelper.grimReaperLegs.itemID
+					&& chestID == OverworldItemHelper.grimReaperBody.itemID
+					&& helmID == OverworldItemHelper.grimReaperHead.itemID
 					&& var5.getFoodStats().getFoodLevel() < 20)
 			{
 				var5.getFoodStats().addStats(1, 0);
@@ -153,7 +166,7 @@ public class ServerTickHandler implements ITickHandler
 					&& legID == IceikaItemHelper.santaLegs.itemID
 					&& chestID == IceikaItemHelper.santaBody.itemID
 					&& helmID == IceikaItemHelper.santaHead.itemID
-					/*&& var5.worldObj.provider.dimensionId == DivineRPG.iceikaID)
+					&& var5.worldObj.provider.dimensionId == DimensionRegistry.IceikaID)
 			{
 				var5.fallDistance = 0.0F;
 				if (var5.getFoodStats().getFoodLevel() < 20)
@@ -169,13 +182,13 @@ public class ServerTickHandler implements ITickHandler
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 1));
 			}*/
-			/*else if (bootID == DivineRPG.divineBoots.itemID
-					&& legID == DivineRPG.divineLegs.itemID
-					&& chestID == DivineRPG.divineBody.itemID
-					&& helmID == DivineRPG.divineHead.itemID)
+			else if (bootID == TwilightItemHelper.divineBoots.itemID
+					&& legID == TwilightItemHelper.divineLegs.itemID
+					&& chestID == TwilightItemHelper.divineBody.itemID
+					&& helmID == TwilightItemHelper.divineHelmet.itemID)
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 2));
-			}*/
+			}
 			/*else if (bootID == DivineRPG.ultimaBoots.itemID
 					&& legID == DivineRPG.ultimaLegs.itemID
 					&& chestID == DivineRPG.ultimaBody.itemID
@@ -183,15 +196,15 @@ public class ServerTickHandler implements ITickHandler
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 3));
 			}*/
-			/*else if (bootID == DivineRPG.azuriteBoots.itemID
-					&& legID == DivineRPG.azuriteLegs.itemID
-					&& chestID == DivineRPG.azuriteBody.itemID
-					&& helmID == DivineRPG.azuriteHead.itemID
+			else if (bootID == TwilightItemHelper.AzuriteBoots.itemID
+					&& legID == TwilightItemHelper.Azuritelegs.itemID
+					&& chestID == TwilightItemHelper.AzuriteChest.itemID
+					&& helmID == TwilightItemHelper.AzuriteHelmet.itemID
 					&& var5.getAir() < 300
 					&& var5.getHealth() < 20)
 			{
 				var5.heal(1);
-			}*/
+			}
 			/*else if (bootID == DivineRPG.glisteningBoots.itemID
 					&& legID == DivineRPG.glisteningLegs.itemID
 					&& chestID == DivineRPG.glisteningChest.itemID
@@ -235,5 +248,6 @@ public class ServerTickHandler implements ITickHandler
 				var5.fallDistance = 0;
 			}
 		}*/
+		}
 	}
 }

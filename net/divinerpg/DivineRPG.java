@@ -46,15 +46,7 @@ public class DivineRPG {
     public static final CreativeTabs Iceika = new TabIceika("Iceika");
     public static final CreativeTabs Twilight = new TabTwilight("Twilight");
 
-    public static final BiomeGenBase DraviteHills = new BiomeGenDraviteHills(44); 
-    public static final BiomeGenBase Azurite = new BiomeGenAzurite(45);
-    public static final BiomeGenBase Uvite = new BiomeGenUvite(46);
-    public static final BiomeGenBase mythilBiome = new BiomeGenMythil(47);
-    public static final BiomeGenBase AugiteBiome = new BiomeGenAugite(48);
-    public static final BiomeGenBase arcanaBiome = new BiomeGenArcana(49);
-    public static final BiomeGenBase IceikaMountains = new BiomeGenIceikaMountians(50);  
-    public static final BiomeGenBase arksianeBiome = new BiomeGenArksiane(51);
-    public static final BiomeGenBase heliosisBiome = new BiomeGenHeliosis(52);
+    
 
 
     @EventHandler

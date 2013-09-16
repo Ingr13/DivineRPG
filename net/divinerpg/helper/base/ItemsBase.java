@@ -3,6 +3,7 @@ package net.divinerpg.helper.base;
 import net.divinerpg.helper.TextureHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

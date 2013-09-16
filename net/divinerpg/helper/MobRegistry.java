@@ -12,6 +12,7 @@ import net.divinerpg.mob.entity.item.EntityBlitzMythril;
 import net.divinerpg.mob.entity.item.EntityBlitzUvite;
 import net.divinerpg.mob.entity.item.EntityBouncingProjectile;
 import net.divinerpg.mob.entity.item.EntityCermileDisk;
+import net.divinerpg.mob.entity.item.EntityCyclopsianStaff;
 import net.divinerpg.mob.entity.item.EntityDarvenDisk;
 import net.divinerpg.mob.entity.item.EntityDeathSeranade;
 import net.divinerpg.mob.entity.item.EntityEvernightProjectile;
@@ -225,6 +226,8 @@ public class MobRegistry {
         ModMobRegistry.registerProjectile(EntityBlitzUvite.class, "Uvite Blitz");
         ModMobRegistry.registerProjectile(EntityDeathSeranade.class, "Death Serenade");
         ModMobRegistry.registerProjectile(EntityIce.class, "Ice");
+        ModMobRegistry.registerProjectile(EntityCyclopsianStaff.class, "Cyclopsian Staff");
+
         
         Spawn();
     }
@@ -236,7 +239,7 @@ public class MobRegistry {
 
         //End
         EntityRegistry.addSpawn(EntityEnderWatcher.class, 10, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
-        EntityRegistry.addSpawn(EntityEnderTriplets.class, 4, 2, 2, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
+        EntityRegistry.addSpawn(EntityEnderTriplets.class, 6, 2, 2, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
 
         //Jungle
         EntityRegistry.addSpawn(EntityJungleDramcryx.class, 20, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.jungle, BiomeGenBase.jungleHills});
@@ -246,66 +249,66 @@ public class MobRegistry {
 
         //Nether
         EntityRegistry.addSpawn(EntityHellSpider.class, 50, 1, 1, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.hell});
-        EntityRegistry.addSpawn(EntityScorcher.class, 8, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.hell});
+        EntityRegistry.addSpawn(EntityScorcher.class, 14, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.hell});
         EntityRegistry.addSpawn(EntityWildFire.class, 50, 1, 1, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.hell});
         EntityRegistry.addSpawn(EntityHellBat.class, 50, 1, 2, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.hell});
 
 
-        //Plains
+        //Overworld(All the biomes)
         EntityRegistry.addSpawn(EntityCyclops.class, 1, 1, 1, EnumCreatureType.monster, overworldBiomes);
 
 
         //Dravite Hills
-        EntityRegistry.addSpawn(EntityDraviteTomo.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.DraviteHills});
-        EntityRegistry.addSpawn(EntityCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.DraviteHills});
-        EntityRegistry.addSpawn(EntitySerenityBunny.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.DraviteHills});
-        EntityRegistry.addSpawn(EntityCori.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.DraviteHills});
-        EntityRegistry.addSpawn(EntityNesro.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.DraviteHills});
-        EntityRegistry.addSpawn(EntityMadivel.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.DraviteHills});
+        EntityRegistry.addSpawn(EntityDraviteTomo.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.DraviteHills});
+        EntityRegistry.addSpawn(EntityCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.DraviteHills});
+        EntityRegistry.addSpawn(EntitySerenityBunny.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.DraviteHills});
+        EntityRegistry.addSpawn(EntityCori.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.DraviteHills});
+        EntityRegistry.addSpawn(EntityNesro.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.DraviteHills});
+        EntityRegistry.addSpawn(EntityMadivel.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.DraviteHills});
 
         //Azurite
-        EntityRegistry.addSpawn(EntityAzuriteCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Azurite});
-        EntityRegistry.addSpawn(EntityAzuriteTomo.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Azurite});
-        EntityRegistry.addSpawn(EntityAzuriteGolem.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Azurite});
-        EntityRegistry.addSpawn(EntityVerek.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Azurite});
-        EntityRegistry.addSpawn(EntityMoonWolf.class, 1, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {DivineRPG.Azurite});
+        EntityRegistry.addSpawn(EntityAzuriteCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Azurite});
+        EntityRegistry.addSpawn(EntityAzuriteTomo.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Azurite});
+        EntityRegistry.addSpawn(EntityAzuriteGolem.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Azurite});
+        EntityRegistry.addSpawn(EntityVerek.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Azurite});
+        EntityRegistry.addSpawn(EntityMoonWolf.class, 1, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {DimensionRegistry.Azurite});
 
         //Uvite
-        EntityRegistry.addSpawn(EntityEnergyCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Uvite});
-        EntityRegistry.addSpawn(EntityEnergyGolem.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Uvite});
-        EntityRegistry.addSpawn(EntityEnergyTomo.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Uvite});
-        EntityRegistry.addSpawn(EntityEchantedWarrior.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Uvite});
-        EntityRegistry.addSpawn(EntityEnergyArcher.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.Uvite});
+        EntityRegistry.addSpawn(EntityEnergyCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Uvite});
+        EntityRegistry.addSpawn(EntityEnergyGolem.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Uvite});
+        EntityRegistry.addSpawn(EntityEnergyTomo.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Uvite});
+        EntityRegistry.addSpawn(EntityEchantedWarrior.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Uvite});
+        EntityRegistry.addSpawn(EntityEnergyArcher.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.Uvite});
 
         //Mythril
-        EntityRegistry.addSpawn(EntityMythrilFiend.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.mythilBiome});
-        EntityRegistry.addSpawn(EntityMythrilGolem.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.mythilBiome});
-        EntityRegistry.addSpawn(EntityMythrilArcher.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.mythilBiome});
-        EntityRegistry.addSpawn(EntitySamek.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.mythilBiome});
-        EntityRegistry.addSpawn(EntityCori2.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.mythilBiome});
+        EntityRegistry.addSpawn(EntityMythrilFiend.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.mythilBiome});
+        EntityRegistry.addSpawn(EntityMythrilGolem.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.mythilBiome});
+        EntityRegistry.addSpawn(EntityMythrilArcher.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.mythilBiome});
+        EntityRegistry.addSpawn(EntitySamek.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.mythilBiome});
+        EntityRegistry.addSpawn(EntityCori2.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.mythilBiome});
 
         //Augite
-        EntityRegistry.addSpawn(EntityAngryBunny.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.AugiteBiome});
-        EntityRegistry.addSpawn(EntityDenseDemon.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.AugiteBiome});
-        EntityRegistry.addSpawn(EntityBaslisk.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.AugiteBiome});
-        EntityRegistry.addSpawn(EntitySoulStealer.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.AugiteBiome});
-        EntityRegistry.addSpawn(EntityDenseCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.AugiteBiome});
-        EntityRegistry.addSpawn(EntityAugiteArcher.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.AugiteBiome});
+        EntityRegistry.addSpawn(EntityAngryBunny.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.AugiteBiome});
+        EntityRegistry.addSpawn(EntityDenseDemon.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.AugiteBiome});
+        EntityRegistry.addSpawn(EntityBaslisk.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.AugiteBiome});
+        EntityRegistry.addSpawn(EntitySoulStealer.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.AugiteBiome});
+        EntityRegistry.addSpawn(EntityDenseCadillion.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.AugiteBiome});
+        EntityRegistry.addSpawn(EntityAugiteArcher.class, 1, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.AugiteBiome});
 
         //Iceika
-        EntityRegistry.addSpawn(EntityGlacide.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.IceikaMountains});
-        EntityRegistry.addSpawn(EntityRollum.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.IceikaMountains});
-        EntityRegistry.addSpawn(EntityAlicanto.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.IceikaMountains});
-        EntityRegistry.addSpawn(EntityFractite.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.IceikaMountains});
-        EntityRegistry.addSpawn(EntityHastreus.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.IceikaMountains});
-        EntityRegistry.addSpawn(EntityFrostArcher.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DivineRPG.IceikaMountains});
+        EntityRegistry.addSpawn(EntityGlacide.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityRollum.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityAlicanto.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityFractite.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityHastreus.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityFrostArcher.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
 
         //Arcana
-        EntityRegistry.addSpawn(EntityLeorna.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DivineRPG.arcanaBiome});
-        EntityRegistry.addSpawn(EntityDatticon.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DivineRPG.arcanaBiome});
-        EntityRegistry.addSpawn(EntityZelus.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DivineRPG.arcanaBiome});
-        EntityRegistry.addSpawn(EntityVatticus.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DivineRPG.arcanaBiome});
-        EntityRegistry.addSpawn(EntityCaptianMerik.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DivineRPG.arcanaBiome});
+        EntityRegistry.addSpawn(EntityLeorna.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DimensionRegistry.arcanaBiome});
+        EntityRegistry.addSpawn(EntityDatticon.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DimensionRegistry.arcanaBiome});
+        EntityRegistry.addSpawn(EntityZelus.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DimensionRegistry.arcanaBiome});
+        EntityRegistry.addSpawn(EntityVatticus.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DimensionRegistry.arcanaBiome});
+        EntityRegistry.addSpawn(EntityCaptianMerik.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {DimensionRegistry.arcanaBiome});
     }
 
 }

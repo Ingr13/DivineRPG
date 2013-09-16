@@ -11,8 +11,8 @@ public class BiomeGenUvite extends BiomeGenBase
         this.setBiomeName("Uvite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        //this.topBlock = (byte)TwilightBlockHelper.uviteGrass.blockID;
-        //this.fillerBlock = (byte)TwilightBlockHelper.uviteDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.uviteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.uviteDirt.blockID;
         this.waterColorMultiplier = 2368548;
         this.theBiomeDecorator.treesPerChunk = 6;
     }

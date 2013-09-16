@@ -1,6 +1,7 @@
 package net.divinerpg.item;
 
 import net.divinerpg.helper.TextureHelper;
+import net.divinerpg.helper.item.OverworldItemHelper;
 import net.divinerpg.helper.item.TwilightItemHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
@@ -26,6 +27,10 @@ public class ItemBowCore extends ItemBow
 	public static final String[] Augite = new String[] {"DivineRPG:AugiteBow_1", "DivineRPG:AugiteBow_2", "DivineRPG:AugiteBow_3"};
 	public static final String[] Azurite = new String[] {"DivineRPG:AzuriteBow_1", "DivineRPG:AzuriteBow_2", "DivineRPG:AzuriteBow_3"};
 	public static final String[] Dravite = new String[] {"DivineRPG:DraviteBow1", "DivineRPG:DraviteBow2", "DivineRPG:DraviteBow3"};
+	
+	public static final String[] Cyclopse = new String[] {"DivineRPG:CyclopseBow_1", "DivineRPG:CyclopseBow_2", "DivineRPG:CyclopseBow_3"};
+
+	
 	private String iconPath;
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
@@ -220,6 +225,16 @@ public class ItemBowCore extends ItemBow
 			for (int i = 0; i < this.iconArray.length; ++i)
 			{
 				this.iconArray[i] = par1IconRegister.registerIcon(Dravite[i]);
+			}
+		}
+		
+		if(itemID == OverworldItemHelper.cyclopseBow.itemID) 
+		{
+			this.iconArray = new Icon[Cyclopse.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i)
+			{
+				this.iconArray[i] = par1IconRegister.registerIcon(Cyclopse[i]);
 			}
 		}
 	}

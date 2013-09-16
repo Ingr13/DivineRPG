@@ -2,6 +2,7 @@ package net.divinerpg.mob.entity;
 
 import java.util.List;
 
+import net.divinerpg.helper.item.OverworldItemHelper;
 import net.divinerpg.lib.Sound;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -168,24 +169,10 @@ public class EntityCyclops extends EntityMob
         return Sound.CyclopsHurt;
     }
 
-    /**
-     * Drop 0-2 items of this living's type
-     */
-    @Override
-    protected void dropFewItems(boolean var1, int var2)
+    protected void dropRareDrop(int var1)
     {
-        int var3 = this.rand.nextInt(2 + var2);
-
-        for (int var4 = 0; var4 < var3; ++var4)
-        {
-            this.dropItem(Item.ingotGold.itemID, 1);
-        }
+         this.dropItem(OverworldItemHelper.bloodGem.itemID, 1);
     }
-
-    //protected void dropRareDrop(int var1)
-    //{
-    //     this.dropItem(OverworldItemHelper.glowingGem.itemID, 1);
-    //}
 
     /**
      * Returns the item ID for the item the mob drops on death.
@@ -193,6 +180,6 @@ public class EntityCyclops extends EntityMob
     @Override
     protected int getDropItemId()
     {
-        return Item.ingotGold.itemID;
+        return OverworldItemHelper.cyclopseEye.itemID;
     }
 }

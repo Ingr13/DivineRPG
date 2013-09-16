@@ -11,8 +11,8 @@ public class BiomeGenAugite extends BiomeGenBase
         this.setBiomeName("Augite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        //this.topBlock = (byte)TwilightBlockHelper.AugiteGrass.blockID;
-        //this.fillerBlock = (byte)TwilightBlockHelper.AugiteDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.AugiteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.AugiteDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

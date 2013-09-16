@@ -31,7 +31,7 @@ public class OverworldRecipeHelper {
 
     public static void initSmelting() {
         GameRegistry.addSmelting(OverworldBlockHelper.realmiteOre.blockID, new ItemStack(OverworldItemHelper.realmiteIngot, 1), 0.7F);
-        // GameRegistry.addSmelting(OverworldBlockHelper.bloodGemOre.blockID, new ItemStack(OverworldItemHelper.glowingGem, 1), 1.0F);
+        GameRegistry.addSmelting(OverworldBlockHelper.bloodGemOre.blockID, new ItemStack(OverworldItemHelper.bloodGem, 1), 1.0F);
         GameRegistry.addSmelting(OverworldBlockHelper.arlemiteOre.blockID, new ItemStack(OverworldItemHelper.arlemiteIngot, 1), 3.0F);
         GameRegistry.addSmelting(OverworldBlockHelper.rupeeOre.blockID, new ItemStack(OverworldItemHelper.rupeeIngot, 1), 3.0F);
         GameRegistry.addSmelting(OverworldBlockHelper.netheriteOre.blockID, new ItemStack(OverworldItemHelper.netheriteIngot, 1), 1.0F);
@@ -77,7 +77,7 @@ public class OverworldRecipeHelper {
 
     public static void initItems() {
         GameRegistry.addShapelessRecipe(new ItemStack(OverworldItemHelper.krakenSkin, 1), new Object[] {OverworldItemHelper.krakenScale, OverworldItemHelper.krakenScale});
-        //GameRegistry.addShapelessRecipe(new ItemStack(OverworldItemHelper.healingStone, 1), new Object[] {Item.magmaCream, OverworldItemHelper.purpleBlaze, OverworldItemHelper.glowingGem});
+        GameRegistry.addShapelessRecipe(new ItemStack(OverworldItemHelper.healingStone, 1), new Object[] {Item.magmaCream, OverworldItemHelper.purpleBlaze, OverworldItemHelper.bloodGem});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.netheriteChunk, 1), new Object[] {" x ", "xxx", " x ", 'x', OverworldItemHelper.netheriteIngot});
         GameRegistry.addShapelessRecipe(new ItemStack(OverworldItemHelper.shadowBar, 1), new Object[] {OverworldItemHelper.arlemiteIngot, OverworldItemHelper.rupeeIngot});
 
@@ -132,15 +132,18 @@ public class OverworldRecipeHelper {
         //GameRegistry.addShapelessRecipe(new ItemStack(OverworldItemHelper.shuriken, 4), new Object[] {Item.ingotIron});
         //GameRegistry.addShapelessRecipe(new ItemStack(OverworldItemHelper.vileStorm, 4), new Object[] {OverworldItemHelper.shuriken, OverworldItemHelper.shuriken, OverworldItemHelper.shuriken, OverworldItemHelper.shuriken, OverworldItemHelper.jungleShard});
 
-        // GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.shadowBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.shadowBar, 'y', Item.silk});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.shadowBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.shadowBar, 'y', Item.silk});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.infernoBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.moltenStone, 'y', Item.blazePowder});
-        // GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.poisonBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.jungleStone, 'y', Item.silk});
+        //GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.poisonBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.jungleStone, 'y', Item.silk});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.bluefirebow, 1), new Object[] {" xy", "x y", " xy", 'x', Item.silk, 'y', OverworldItemHelper.blueFireStone});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.cyclopseBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.cyclopseEye, 'y', Item.silk});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.cyclopseStaff, 1), new Object[] {" E ", " D ", " R ", 'E', OverworldItemHelper.cyclopseEye, 'D', Item.diamond, 'R', OverworldItemHelper.rupeeIngot});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.cyclopseSword, 1), new Object[] {" E ", " E ", " S ", 'E', OverworldItemHelper.cyclopseEye, 'S', Item.stick});
 
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.serenadeStriker, 1), new Object[] {"y  ", "yyy", "  y", 'y', Item.diamond});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.serenadeHealth, 1), new Object[] {"y  ", "yyy", "  y", 'y', OverworldItemHelper.netheriteChunk});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.serenadeOfDeath, 1), new Object[] {"y  ", "yyy", "  y", 'y', OverworldItemHelper.shadowBar});
-        // GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.seranadeGrowth, 1), new Object[] {"y  ", "yyy", "  y", 'y', OverworldItemHelper.arlemiteIngot});
+        //GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.seranadeOfGrowth, 1), new Object[] {"y  ", "yyy", "  y", 'y', OverworldItemHelper.arlemiteIngot});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.frostCannon, 1), new Object[] {"x x", "x x", "yyy", 'y', OverworldItemHelper.iceStone, 'x', OverworldItemHelper.shadowBar});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.ghastCannon, 1), new Object[] {"x x", "x x", "yyy", 'y', OverworldItemHelper.hellStoneIngot, 'x', OverworldItemHelper.shadowBar});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.soundOfMusic, 1), new Object[] {"yyy", "yxy", "yyy", 'y', OverworldItemHelper.purpleBlaze, 'x', Item.silk});
@@ -178,6 +181,14 @@ public class OverworldRecipeHelper {
     }
 
     public static void initTools() {
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.divineWoodAxe, 1), new Object[] {" PP", " SP", " S ", 'S', OverworldItemHelper.divineStick, 'P', OverworldBlockHelper.DivinePlank});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.divineWoodHoe, 1), new Object[] {" PP", " S ", " S ", 'S', OverworldItemHelper.divineStick, 'P', OverworldBlockHelper.DivinePlank});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.divineWoodPickaxe, 1), new Object[] {"PPP", " S ", " S ", 'S', OverworldItemHelper.divineStick, 'P', OverworldBlockHelper.DivinePlank});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.divineWoodShovel, 1), new Object[] {" P ", " S ", " S ", 'S', OverworldItemHelper.divineStick, 'P', OverworldBlockHelper.DivinePlank});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.divineWoodSword, 1), new Object[] {" P ", " P ", " S ", 'S', OverworldItemHelper.divineStick, 'P', OverworldBlockHelper.DivinePlank});
+        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.divineStick, 4), new Object[] {"S", "S", 'S', OverworldBlockHelper.DivinePlank});
+        GameRegistry.addShapelessRecipe(new ItemStack(OverworldBlockHelper.DivinePlank, 4), new Object[] {OverworldBlockHelper.DivineLog});
+
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.realmitePickaxe, 1), new Object[] {"xxx", " y ", " y ", 'x', OverworldItemHelper.realmiteIngot, 'y', Item.stick});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.realmiteAxe, 1), new Object[] {"xx ", "xy ", " y ", 'x', OverworldItemHelper.realmiteIngot, 'y', Item.stick});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.realmiteShovel, 1), new Object[] {" x ", " y ", " y ", 'x', OverworldItemHelper.realmiteIngot, 'y', Item.stick});
@@ -368,7 +379,7 @@ public class OverworldRecipeHelper {
         //  GameRegistry.addRecipe(new ItemStack(OverworldBlockHelper.paneOrange, 16), new Object[] {"xxx", "xxx", 'x', OverworldBlockHelper.glassOrange});
         //  GameRegistry.addRecipe(new ItemStack(OverworldBlockHelper.paneWhite, 16), new Object[] {"xxx", "xxx", 'x', OverworldBlockHelper.glassWhite});
         GameRegistry.addShapelessRecipe(new ItemStack(OverworldBlockHelper.divineRock, 1), new Object[] {OverworldItemHelper.divineShard, Block.stone});
-        // GameRegistry.addRecipe(new ItemStack(Block.bedrock, 1), new Object[] {"yyy", "yxy ", "yyy", 'y', Block.obsidian, 'x', OverworldBlockHelper.rupeeBlock});
+        GameRegistry.addRecipe(new ItemStack(Block.bedrock, 1), new Object[] {"yyy", "yxy ", "yyy", 'y', Block.obsidian, 'x', OverworldBlockHelper.rupeeBlock});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.krakenScale, 1), new Object[] {"y y", "y y", "yyy", 'y', new ItemStack(Item.dyePowder, 1, 0)});
         //GameRegistry.addRecipe(new ItemStack(OverworldBlockHelper.skeletonChest, 1), new Object[] {"yyy", "y y", "yyy", 'y', Item.bone});
         // GameRegistry.addRecipe(new ItemStack(OverworldBlockHelper.deadBridge, 5), new Object[] {"yyy", "y y", "yyy", 'y', Item.lightStoneDust});

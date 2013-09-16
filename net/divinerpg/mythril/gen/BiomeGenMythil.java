@@ -11,8 +11,8 @@ public class BiomeGenMythil extends BiomeGenBase
         this.setBiomeName("Mythril");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        //this.topBlock = (byte)TwilightBlockHelper.MythrilGrass.blockID;
-        //this.fillerBlock = (byte)TwilightBlockHelper.MythrilDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.MythrilGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.MythrilDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

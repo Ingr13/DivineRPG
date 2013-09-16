@@ -13,7 +13,7 @@ public class WorldProviderIceika extends WorldProvider
     @Override
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerIceika(DivineRPG.IceikaMountains);
+        this.worldChunkMgr = new WorldChunkManagerIceika(DimensionRegistry.IceikaMountains);
         this.dimensionId = DimensionRegistry.IceikaID;
     }
 

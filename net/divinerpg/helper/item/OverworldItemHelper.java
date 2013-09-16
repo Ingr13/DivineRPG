@@ -8,6 +8,8 @@ import net.divinerpg.item.ItemAngelicArmor;
 import net.divinerpg.item.ItemAquaticArmor;
 import net.divinerpg.item.ItemArlemiteArmor;
 import net.divinerpg.item.ItemBlueBow;
+import net.divinerpg.item.ItemBowCore;
+import net.divinerpg.item.ItemCyclopseStaff;
 import net.divinerpg.item.ItemDensos;
 import net.divinerpg.item.ItemEliteRealmiteArmor;
 import net.divinerpg.item.ItemFrostSword;
@@ -40,6 +42,7 @@ import net.divinerpg.item.tool.ToolPickaxe;
 import net.divinerpg.item.tool.ToolShickaxe;
 import net.divinerpg.item.tool.ToolShovel;
 import net.divinerpg.item.tool.ToolSword;
+import net.divinerpg.lib.Sound;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -73,6 +76,7 @@ public class OverworldItemHelper {
     public static EnumToolMaterial arlemiteShick = EnumHelper.addToolMaterial("ArlemiteShick", 4, 13000, 15.0F, 7, 15);
     public static EnumToolMaterial divineWood = EnumHelper.addToolMaterial("divineWood", 0, 59, 2.0F, 0, 15);
     public static EnumToolMaterial Massivence = EnumHelper.addToolMaterial("massivence", 0, 520, 2.0F, 5, 15);
+    public static EnumToolMaterial Cyclopse = EnumHelper.addToolMaterial("Cyclopse", 0, 1000, 8.0F, 3.0F, 10);
 
 
     static EnumArmorMaterial angelicArmor = EnumHelper.addArmorMaterial("Angelic", 200, new int[] {3, 4, 3, 2}, 22);
@@ -240,6 +244,11 @@ public class OverworldItemHelper {
     public static final Item divineWoodShovel = new ToolShovel(x.divineWoodShovelID, divineWood).registerItemTexture("DivineWoodShovel").setUnlocalizedName("DivineWoodShovel").setCreativeTab(DivineRPG.Overworld);
     public static final Item divineWoodSword = new ToolSword(x.divineWoodSwordID, divineWood).registerItemTexture("DivineWoodSword").setUnlocalizedName("DivineWoodSword").setCreativeTab(DivineRPG.Overworld);
 
+    public static final Item cyclopseEye = new ItemDivineRPG(x.cyclopseEyeID).registerTextures("CyclopseEye").setUnlocalizedName("CyclopseEye").setCreativeTab(DivineRPG.Overworld);
+    public static final Item cyclopseStaff = new ItemCyclopseStaff(x.cyclopseStaffID, 17, 1, 2, Sound.Staff, Sound.Staff).registerTextures("CyclopianStaff").setUnlocalizedName("CyclopseStaff").setCreativeTab(DivineRPG.Overworld);
+    public static final Item cyclopseBow = new ItemBowCore(x.cyclopseBowID).setUnlocalizedName("CyclopianBow").setCreativeTab(DivineRPG.Overworld);
+    public static final Item cyclopseSword = new ItemDivineRPGSword(x.cyclopseSwordID, Cyclopse).registerTextures("CyclopianSword").setUnlocalizedName("CyclopianSword").setCreativeTab(DivineRPG.Overworld);
+    
     public static void addNames()
     {
     	LanguageRegistry.addName(homeTeleporter, "Home Teleporter");

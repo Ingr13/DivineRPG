@@ -11,8 +11,8 @@ public class BiomeGenHeliosis extends BiomeGenBase
         this.setBiomeName("Arksiane");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        //this.topBlock = (byte)Block.grass.blockID;
-       // this.fillerBlock = (byte)Block.dirt.blockID;
+        this.topBlock = (byte)Block.grass.blockID;
+        this.fillerBlock = (byte)Block.dirt.blockID;
         this.setMinMaxHeight(0.5F, 0.5F);
     }
 }

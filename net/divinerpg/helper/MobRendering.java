@@ -214,6 +214,7 @@ public class MobRendering {
         RenderingRegistry.registerEntityRenderingHandler(EntityMamormeterShot.class, new RenderBasicProjectile(EntityResourceLocs.KOS_PROJECTILE));
         RenderingRegistry.registerEntityRenderingHandler(EntityDeathSeranade.class, new RenderBasicProjectile(EntityResourceLocs.DEATH_SERENADE));
         RenderingRegistry.registerEntityRenderingHandler(EntityIce.class, new RenderBasicProjectile(EntityResourceLocs.ICE_SERENADE));
-    
+		RenderingRegistry.registerEntityRenderingHandler(EntityCyclopsianStaff.class, new RenderBasicProjectile(EntityResourceLocs.CYCLOPSE_SHOT));
+
     }
 }

@@ -5,6 +5,7 @@ import net.divinerpg.block.BlockDivineSpawner;
 import net.divinerpg.block.ModBlock;
 import net.divinerpg.block.ModDirt;
 import net.divinerpg.helper.config.BlockConfigHelper;
+import net.divinerpg.helper.config.VetheaConfigHelper;
 import net.divinerpg.vethea.block.BlockAcid;
 import net.divinerpg.vethea.block.BlockBacterialAcid;
 import net.divinerpg.vethea.block.BlockBarredDoor;
@@ -33,8 +34,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class VetheaBlockHelper {
 
-	public static BlockConfigHelper x;
-
+	public static VetheaConfigHelper x;
+	public static BlockConfigHelper y;
+	
     // SPAWNERS
     public static final Block dreamwreckerSpawner = new BlockDivineSpawner(x.dreamwreckerSpawnerID, "Dreamwrecker").registerTexture("FireCrystal").setCreativeTab(DivineRPG.Vethea);
     public static final Block vermenousSpawner = new BlockDivineSpawner(x.vermenousSpawnerID, "Vermenous").registerTexture("FireCrystal").setCreativeTab(DivineRPG.Vethea);
@@ -51,8 +53,8 @@ public class VetheaBlockHelper {
     public static final Block lunicAltar = new ModBlock(x.lunicAltarID).registerTexture("LunicAltar").setUnlocalizedName("Lunic").setCreativeTab(DivineRPG.Vethea);
 
     public static final Block dreamstone = new BlockVethea(x.dreamstoneID, Material.rock).setUnlocalizedName("dreamstone").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);
-    public static final Block dreamdirt = new ModDirt(x.DreamDirtID).registerTexture("DreamGrass_Bottom").setUnlocalizedName("dreamdirt").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);
-    public static final Block dreamgrass = new BlockDreamgrass(x.DreamGrassID).setUnlocalizedName("dreamgrass").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);
+    public static final Block dreamdirt = new ModDirt(y.DreamDirtID).registerTexture("DreamGrass_Bottom").setUnlocalizedName("dreamdirt").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);
+    public static final Block dreamgrass = new BlockDreamgrass(y.DreamGrassID).setUnlocalizedName("dreamgrass").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);
     public static final Block dreamwood = new BlockDreamwood(x.dreamwoodID, "Dream").setUnlocalizedName("dreamwood").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);
     public static final Block dreamwoodLeaves = new BlockDreamwoodLeaves(x.dreamwoodLeavesID, "DreamWood").setUnlocalizedName("dreamwoodLeaves").setHardness(1F).setCreativeTab(DivineRPG.Vethea);
     public static final Block dreambricks = new BlockVethea(x.dreambricksID, Material.rock).registerTexture("DreamBricks1").setUnlocalizedName("dreambricks").setHardness(1F).setResistance(1F).setCreativeTab(DivineRPG.Vethea);

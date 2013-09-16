@@ -176,5 +176,6 @@ public class EntityResourceLocs {
     public static ResourceLocation DEATH_SERENADE = new ResourceLocation(Reference.MOD_ID + ":" + "/textures/entity/SerenadeOfDeathProjectile.png");
     public static ResourceLocation ICE_SERENADE = new ResourceLocation(Reference.MOD_ID + ":" + "/textures/entity/SerenadeOfIceProjectile.png");
     public static ResourceLocation BOUNCING_PROJECTILE = new ResourceLocation(Reference.MOD_ID + ":" + "/textures/entity/BouncingProjectile.png");
+    public static ResourceLocation CYCLOPSE_SHOT = new ResourceLocation(Reference.MOD_ID + ":" + "/textures/items/CyclopseEye.png");
 
 }

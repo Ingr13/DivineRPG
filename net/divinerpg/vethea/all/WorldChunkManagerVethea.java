@@ -16,7 +16,7 @@ public class WorldChunkManagerVethea extends WorldChunkManager
 	{
 		super();
 		this.allowedBiomes.clear();
-		this.allowedBiomes.add(DivineRPG.arksianeBiome);
-		this.allowedBiomes.add(DivineRPG.heliosisBiome); //TODO: Check Heliosis biome.
+		this.allowedBiomes.add(DimensionRegistry.arksianeBiome);
+		this.allowedBiomes.add(DimensionRegistry.heliosisBiome); //TODO: Check Heliosis biome.
 	}
 }

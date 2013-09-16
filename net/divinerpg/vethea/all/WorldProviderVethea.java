@@ -13,7 +13,7 @@ public class WorldProviderVethea extends WorldProvider
 	 */
 	public void registerWorldChunkManager()
 	{
-		this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.arksianeBiome, 1.0F, 1.0F);
+		this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.arksianeBiome, 1.0F, 1.0F);
 		this.dimensionId = DimensionRegistry.VetheaID;
 	}
 

@@ -14,8 +14,8 @@ public class BiomeGenAzurite extends BiomeGenBase
         this.setBiomeName("Azurite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        //this.topBlock = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
-        //this.fillerBlock = (byte)TwilightBlockHelper.AzuriteDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.AzuriteDirt.blockID;
         this.waterColorMultiplier = 2368548;
         this.theBiomeDecorator.treesPerChunk = 6;
     }

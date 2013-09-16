@@ -14,7 +14,7 @@ public class WorldProviderAzurite extends WorldProvider
     @Override
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.Azurite, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.Azurite, 0.5F, 0.5F);
         this.dimensionId = DimensionRegistry.AzuriteID;
     }
 

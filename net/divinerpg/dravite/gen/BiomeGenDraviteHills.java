@@ -19,8 +19,8 @@ public class BiomeGenDraviteHills extends BiomeGenBase
         this.setBiomeName("Dravite Hills");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        //this.topBlock = (byte)TwilightBlockHelper.draviteGrass.blockID;
-        //this.fillerBlock = (byte)TwilightBlockHelper.draviteDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.draviteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.draviteDirt.blockID;
         this.waterColorMultiplier = 2368548;
         this.theBiomeDecorator.treesPerChunk = 6;
     }

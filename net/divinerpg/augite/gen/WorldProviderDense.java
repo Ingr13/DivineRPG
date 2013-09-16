@@ -14,7 +14,7 @@ public class WorldProviderDense extends WorldProvider
     @Override
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.AugiteBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.AugiteBiome, 0.5F, 0.5F);
         this.dimensionId = DimensionRegistry.AugiteID;
     }
 

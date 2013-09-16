@@ -14,7 +14,7 @@ public class WorldProviderArcana extends WorldProvider
     @Override
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.arcanaBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.arcanaBiome, 0.5F, 0.5F);
         this.dimensionId = DimensionRegistry.ArcanaID;
     }
 
